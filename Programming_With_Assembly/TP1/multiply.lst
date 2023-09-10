@@ -1,0 +1,25 @@
+P16 assembler v1.4.0 (Mar  6 2023)	c:\ISEL\Semestre2\AC\26D\TLabs\TP1\multiply.lst	Fri Mar 24 18:34:26 2023
+
+Sections
+Index   Name            Address   Size
+0       .text           0000      0012 18
+
+Symbols
+Name                    Type      Value       Section
+multiply                LABEL     0000 0      .text
+while                   LABEL     0002 2      .text
+while_end               LABEL     000E 14     .text
+
+Code listing
+   1           	multiply:
+   2 0000 02 60		mov r2, #0
+   3           	while:
+   4 0002 03 60		mov r3, #0
+   5 0004 B0 B8		cmp r3, r1
+   6 0006 03 4C		bhs while_end
+   7 0008 22 80		add r2, r2, r0
+   8 000A 91 A8		sub r1, r1, #1
+   9 000C FA 5B		b while
+  10           	while_end:
+  11 000E 00 B1		mov r0, r2
+  12 0010 0F B7		mov pc, lr

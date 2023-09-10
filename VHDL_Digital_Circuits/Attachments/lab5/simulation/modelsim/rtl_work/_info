@@ -1,0 +1,441 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/mpmig/ISEL/LSD/lab5/simulation/modelsim
+Eadder
+Z1 w1667645202
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8C:/Users/mpmig/ISEL/LSD/lab4/adder.vhd
+Z5 FC:/Users/mpmig/ISEL/LSD/lab4/adder.vhd
+l0
+L4
+VgHh7;0;1YEQkI24bI8ohR0
+!s100 cj;Xi?>HmBUF<_jTQ_OfM1
+Z6 OV;C;10.5b;63
+31
+Z7 !s110 1669812772
+!i10b 1
+Z8 !s108 1669812772.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/mpmig/ISEL/LSD/lab4/adder.vhd|
+Z10 !s107 C:/Users/mpmig/ISEL/LSD/lab4/adder.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Aadder
+R2
+R3
+DEx4 work 5 adder 0 22 gHh7;0;1YEQkI24bI8ohR0
+l27
+L14
+V_>:Bg8O^jZ:HX6eMB0j_a1
+!s100 FD0:9lX9e3OaRg3T1jzcV0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Eclkdiv
+Z13 w1669806940
+Z14 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R2
+R3
+R0
+Z15 8C:/Users/mpmig/ISEL/LSD/lab5/clkDIV.vhd
+Z16 FC:/Users/mpmig/ISEL/LSD/lab5/clkDIV.vhd
+l0
+L5
+VZ=f7g^c?a5zF`2O:4UlYN0
+!s100 `V>M>?BkYR7zEBSMA5V8A0
+R6
+31
+R7
+!i10b 1
+R8
+Z17 !s90 -reportprogress|300|-93|-work|work|C:/Users/mpmig/ISEL/LSD/lab5/clkDIV.vhd|
+Z18 !s107 C:/Users/mpmig/ISEL/LSD/lab5/clkDIV.vhd|
+!i113 1
+R11
+R12
+Abhv
+R14
+R2
+R3
+DEx4 work 6 clkdiv 0 22 Z=f7g^c?a5zF`2O:4UlYN0
+l16
+L11
+VgbaYXVPKT2[U5kSbZMFS63
+!s100 <1TaS59>[IjzZo4K_;_?R1
+R6
+31
+R7
+!i10b 1
+R8
+R17
+R18
+!i113 1
+R11
+R12
+Ecountup
+Z19 w1669810663
+R2
+R3
+R0
+Z20 8C:/Users/mpmig/ISEL/LSD/lab5/countup.vhd
+Z21 FC:/Users/mpmig/ISEL/LSD/lab5/countup.vhd
+l0
+L4
+VF9YZPWVOGzPOHJ5RXKMiZ0
+!s100 LE8DOhz5S>hVG;TJ9SQ0>0
+R6
+31
+R7
+!i10b 1
+R8
+Z22 !s90 -reportprogress|300|-93|-work|work|C:/Users/mpmig/ISEL/LSD/lab5/countup.vhd|
+Z23 !s107 C:/Users/mpmig/ISEL/LSD/lab5/countup.vhd|
+!i113 1
+R11
+R12
+Acountup
+R2
+R3
+DEx4 work 7 countup 0 22 F9YZPWVOGzPOHJ5RXKMiZ0
+l39
+L12
+VzeB_ND_]`Z6hIPRO:DRkO0
+!s100 OJ^oWg6cg@=<E9f`RP:SA3
+R6
+31
+R7
+!i10b 1
+R8
+R22
+R23
+!i113 1
+R11
+R12
+Edecoderhex
+R13
+R2
+R3
+R0
+Z24 8C:/Users/mpmig/ISEL/LSD/lab5/decoderHex.vhd
+Z25 FC:/Users/mpmig/ISEL/LSD/lab5/decoderHex.vhd
+l0
+L4
+VVP0MH9SS__Df8o@095odC1
+!s100 AX_HhmKjc[f<03e<ULWS^2
+R6
+31
+R7
+!i10b 1
+R8
+Z26 !s90 -reportprogress|300|-93|-work|work|C:/Users/mpmig/ISEL/LSD/lab5/decoderHex.vhd|
+Z27 !s107 C:/Users/mpmig/ISEL/LSD/lab5/decoderHex.vhd|
+!i113 1
+R11
+R12
+Alogicfuntion
+R2
+R3
+DEx4 work 10 decoderhex 0 22 VP0MH9SS__Df8o@095odC1
+l21
+L10
+VzgAAVJPiF6RZBiAMgn@To2
+!s100 N;V]gecEa>5Bm5KBA4H^@3
+R6
+31
+R7
+!i10b 1
+R8
+R26
+R27
+!i113 1
+R11
+R12
+Effd
+R13
+R2
+R3
+R0
+Z28 8C:/Users/mpmig/ISEL/LSD/lab5/FFD.vhd
+Z29 FC:/Users/mpmig/ISEL/LSD/lab5/FFD.vhd
+l0
+L4
+VlLnJhUY99`]7^:0M0ZT@z3
+!s100 7zIA7N0c8k?G4DH:]Q7>;3
+R6
+31
+R7
+!i10b 1
+R8
+Z30 !s90 -reportprogress|300|-93|-work|work|C:/Users/mpmig/ISEL/LSD/lab5/FFD.vhd|
+Z31 !s107 C:/Users/mpmig/ISEL/LSD/lab5/FFD.vhd|
+!i113 1
+R11
+R12
+Alogicfunction
+R2
+R3
+DEx4 work 3 ffd 0 22 lLnJhUY99`]7^:0M0ZT@z3
+l16
+L14
+VXLGJhA0YLNkWk3eiz=LFX0
+!s100 EbhLHDh93W5h:OfQP8>M81
+R6
+31
+R7
+!i10b 1
+R8
+R30
+R31
+!i113 1
+R11
+R12
+Efulladder
+Z32 w1667561843
+R2
+R3
+R0
+Z33 8C:/Users/mpmig/ISEL/LSD/lab4/fulladder.vhd
+Z34 FC:/Users/mpmig/ISEL/LSD/lab4/fulladder.vhd
+l0
+L4
+V4e`Yl4?U0H32mBnJKh04N2
+!s100 cjm=R?ec_5j4<6ndAYbUC1
+R6
+31
+R7
+!i10b 1
+Z35 !s108 1669812771.000000
+Z36 !s90 -reportprogress|300|-93|-work|work|C:/Users/mpmig/ISEL/LSD/lab4/fulladder.vhd|
+Z37 !s107 C:/Users/mpmig/ISEL/LSD/lab4/fulladder.vhd|
+!i113 1
+R11
+R12
+Afulladder
+R2
+R3
+DEx4 work 9 fulladder 0 22 4e`Yl4?U0H32mBnJKh04N2
+l15
+L14
+Vf@R`Ek[Q8X9bgi>GYk<]^0
+!s100 eeh<1WnEGTEn9`X4DdXHf3
+R6
+31
+R7
+!i10b 1
+R35
+R36
+R37
+!i113 1
+R11
+R12
+Eint7seg
+R13
+R2
+R3
+R0
+Z38 8C:/Users/mpmig/ISEL/LSD/lab5/int7seg.vhd
+Z39 FC:/Users/mpmig/ISEL/LSD/lab5/int7seg.vhd
+l0
+L4
+VJg9:^[`Fz[^9g0DaDUB<d1
+!s100 `Pjz7i?]GB<AdE:ElX6_Q1
+R6
+31
+R7
+!i10b 1
+R8
+Z40 !s90 -reportprogress|300|-93|-work|work|C:/Users/mpmig/ISEL/LSD/lab5/int7seg.vhd|
+Z41 !s107 C:/Users/mpmig/ISEL/LSD/lab5/int7seg.vhd|
+!i113 1
+R11
+R12
+Alogicfunction
+R2
+R3
+DEx4 work 7 int7seg 0 22 Jg9:^[`Fz[^9g0DaDUB<d1
+l14
+L10
+VOZgz7jh:T@kV8Zh^N`b=F1
+!s100 CY]3fWdCP;YT2S4TbP`fm2
+R6
+31
+R7
+!i10b 1
+R8
+R40
+R41
+!i113 1
+R11
+R12
+Elab5
+Z42 w1669812739
+R2
+R3
+R0
+Z43 8C:/Users/mpmig/ISEL/LSD/lab5/lab5.vhd
+Z44 FC:/Users/mpmig/ISEL/LSD/lab5/lab5.vhd
+l0
+L4
+VJ6]G@2o4ZA0hVTlVZcX;b3
+!s100 YA8[6Tc@LjO23eol`i[=X0
+R6
+31
+R7
+!i10b 1
+R8
+Z45 !s90 -reportprogress|300|-93|-work|work|C:/Users/mpmig/ISEL/LSD/lab5/lab5.vhd|
+Z46 !s107 C:/Users/mpmig/ISEL/LSD/lab5/lab5.vhd|
+!i113 1
+R11
+R12
+Alab5
+R2
+R3
+DEx4 work 4 lab5 0 22 J6]G@2o4ZA0hVTlVZcX;b3
+l40
+L13
+VjYgn4X68gcP_O:ldTf:SP0
+!s100 D3o8@R^5c7IA7Hkkb4oQl1
+R6
+31
+R7
+!i10b 1
+R8
+R45
+R46
+!i113 1
+R11
+R12
+Elab5_tb
+Z47 w1669812616
+R2
+R3
+R0
+Z48 8C:/Users/mpmig/ISEL/LSD/lab5/LAB5_tb.vhd
+Z49 FC:/Users/mpmig/ISEL/LSD/lab5/LAB5_tb.vhd
+l0
+L4
+VIzj]JLO3@PU?zPUUi_KGc3
+!s100 M_Q_h5AjihZ2SiFeiVG>80
+R6
+32
+Z50 !s110 1669812781
+!i10b 1
+Z51 !s108 1669812781.000000
+Z52 !s90 -reportprogress|300|-work|work|C:/Users/mpmig/ISEL/LSD/lab5/LAB5_tb.vhd|
+Z53 !s107 C:/Users/mpmig/ISEL/LSD/lab5/LAB5_tb.vhd|
+!i113 1
+Z54 o-work work
+R12
+Alab5_tb_arch
+R2
+R3
+DEx4 work 7 lab5_tb 0 22 Izj]JLO3@PU?zPUUi_KGc3
+l27
+L7
+VXFMaLc<E>^TU_MKf5mz]<1
+!s100 ;eW;Hec45cHIV8e]=RNgL0
+R6
+32
+R50
+!i10b 1
+R51
+R52
+R53
+!i113 1
+R54
+R12
+Emux2_1
+Z55 w1669127314
+R2
+R3
+R0
+Z56 8C:/Users/mpmig/ISEL/LSD/tp2/mux2_1.vhd
+Z57 FC:/Users/mpmig/ISEL/LSD/tp2/mux2_1.vhd
+l0
+L4
+V>7<9V[3d>B1Wg^fP5KQDW2
+!s100 nbdSGCJ3>2P:L?NGfWzNT0
+R6
+31
+R7
+!i10b 1
+R8
+Z58 !s90 -reportprogress|300|-93|-work|work|C:/Users/mpmig/ISEL/LSD/tp2/mux2_1.vhd|
+Z59 !s107 C:/Users/mpmig/ISEL/LSD/tp2/mux2_1.vhd|
+!i113 1
+R11
+R12
+Amux2_1
+R2
+R3
+DEx4 work 6 mux2_1 0 22 >7<9V[3d>B1Wg^fP5KQDW2
+l15
+L13
+VUZb^d44=fFU=[g@z17Q0e2
+!s100 f^eni^=nVYCg`8A;J]1GU1
+R6
+31
+R7
+!i10b 1
+R8
+R58
+R59
+!i113 1
+R11
+R12
+Ereg4bits
+Z60 w1669809098
+R2
+R3
+R0
+Z61 8C:/Users/mpmig/ISEL/LSD/lab5/reg4bits.vhd
+Z62 FC:/Users/mpmig/ISEL/LSD/lab5/reg4bits.vhd
+l0
+L4
+V_YDe9U5XgLXY=ShVjN40a0
+!s100 KKC6ae9?XTj449B:8D<YO3
+R6
+31
+R7
+!i10b 1
+R8
+Z63 !s90 -reportprogress|300|-93|-work|work|C:/Users/mpmig/ISEL/LSD/lab5/reg4bits.vhd|
+Z64 !s107 C:/Users/mpmig/ISEL/LSD/lab5/reg4bits.vhd|
+!i113 1
+R11
+R12
+Areg4bits
+R2
+R3
+DEx4 work 8 reg4bits 0 22 _YDe9U5XgLXY=ShVjN40a0
+l23
+L11
+V>FR8A1MEOonjflCePS>T=0
+!s100 GHik4fz@aSDR9e=GCaeJa2
+R6
+31
+R7
+!i10b 1
+R8
+R63
+R64
+!i113 1
+R11
+R12

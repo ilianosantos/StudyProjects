@@ -1,0 +1,13 @@
+LIBRARY IEEE;
+use IEEE.std_logic_1164.all;
+
+entity flags is
+port (
+A3 : in std_logic;
+B3 : in std_logic;
+R3 : in std_logic;
+CBi : in std_logic;
+OVo: out std_logic;
+CBo : out std_logic_vector(3 downto 0)
+);
+end flags;

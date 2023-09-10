@@ -1,0 +1,64 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity lab5 is
+port(	Data_in : in std_logic_vector(3 downto 0);
+		CE, PL, CLK, CLEAR : in std_logic; 
+		Q : out std_logic_vector(3 downto 0);
+		SEG7: out std_logic_vector(7 downto 0);
+		TC : out std_logic
+		);
+end lab5;
+
+architecture lab5 of lab5 is
+
+component countup port(	
+	DataIn : in std_logic_vector(3 downto 0);
+	CE, PL, CLK : in std_logic; 
+	Q : out std_logic_vector(3 downto 0);
+	TC : out std_logic
+);
+end component;
+
+component clkDIV port(
+	clk_in: in std_logic;
+	clk_out: out std_logic
+);
+end component;
+
+component decoderHex port(
+	A: in std_logic_vector(3 downto 0);		
+	clear : in std_logic;
+	HEX0 : out std_logic_vector(7 downto 0)
+);
+end component;
+
+
+signal term0: std_logic;
+signal term1: std_logic_vector(3 downto 0);
+
+begin
+
+CLKDIV0: clkDIV port map(
+	clk_in => CLK,
+	clk_out => term0
+);
+
+CountUp0: countup port map(
+	DataIn => Data_in,
+	CE => CE,
+	PL => PL,
+	CLK => term0,
+	Q => term1,
+	TC => TC
+);
+
+DecHex0: decoderHex port map(
+	A => term1,
+	clear => CLEAR,
+	HEX0 => SEG7
+);
+
+Q<= term1;
+
+end lab5;

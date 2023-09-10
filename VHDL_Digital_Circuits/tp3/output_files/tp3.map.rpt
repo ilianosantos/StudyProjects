@@ -1,0 +1,549 @@
+Analysis & Synthesis report for tp3
+Mon Jan 09 15:04:25 2023
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Inverted Register Statistics
+ 10. Port Connectivity Checks: "caminhoDados:U_caminhoDados|decoderHex:DecHex0|bin2dec_int:Ub"
+ 11. Port Connectivity Checks: "caminhoDados:U_caminhoDados|decoderHex:DecHex0|bin2dec_int:Ua"
+ 12. Port Connectivity Checks: "caminhoDados:U_caminhoDados|sumsub:Sub0"
+ 13. Port Connectivity Checks: "caminhoDados:U_caminhoDados|countup:Cont0|reg4bits:reg0|FFD:FFD3"
+ 14. Port Connectivity Checks: "caminhoDados:U_caminhoDados|countup:Cont0|reg4bits:reg0|FFD:FFD2"
+ 15. Port Connectivity Checks: "caminhoDados:U_caminhoDados|countup:Cont0|reg4bits:reg0|FFD:FFD1"
+ 16. Port Connectivity Checks: "caminhoDados:U_caminhoDados|countup:Cont0|reg4bits:reg0|FFD:FFD0"
+ 17. Port Connectivity Checks: "caminhoDados:U_caminhoDados|countup:Cont0|reg4bits:reg0"
+ 18. Port Connectivity Checks: "caminhoDados:U_caminhoDados|countup:Cont0|adder:Adder0"
+ 19. Port Connectivity Checks: "caminhoDados:U_caminhoDados|countup:Cont0"
+ 20. Port Connectivity Checks: "ROM:U_ROM|FFD:U_FF1"
+ 21. Port Connectivity Checks: "ROM:U_ROM|FFD:U_FF0"
+ 22. Post-Synthesis Netlist Statistics for Top Partition
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Jan 09 15:04:25 2023       ;
+; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                      ; tp3                                         ;
+; Top-level Entity Name              ; divisor                                     ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 52                                          ;
+;     Total combinational functions  ; 52                                          ;
+;     Dedicated logic registers      ; 14                                          ;
+; Total registers                    ; 14                                          ;
+; Total pins                         ; 52                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M50DAF484C6GES   ;                    ;
+; Top-level entity name                                            ; divisor            ; tp3                ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 6           ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 6           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-6         ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                       ;
++----------------------------------+-----------------+-----------------+---------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------+---------+
+; divisor.vhd                      ; yes             ; User VHDL File  ; C:/Users/mpmig/Desktop/tp3/divisor.vhd      ;         ;
+; ROM.vhd                          ; yes             ; User VHDL File  ; C:/Users/mpmig/Desktop/tp3/ROM.vhd          ;         ;
+; ../lab5/reg4bits.vhd             ; yes             ; User VHDL File  ; C:/Users/mpmig/Desktop/lab5/reg4bits.vhd    ;         ;
+; ../lab5/mux2_1.vhd               ; yes             ; User VHDL File  ; C:/Users/mpmig/Desktop/lab5/mux2_1.vhd      ;         ;
+; ../lab5/FFD.vhd                  ; yes             ; User VHDL File  ; C:/Users/mpmig/Desktop/lab5/FFD.vhd         ;         ;
+; ../lab5/countup.vhd              ; yes             ; User VHDL File  ; C:/Users/mpmig/Desktop/lab5/countup.vhd     ;         ;
+; int7seg.vhd                      ; yes             ; User VHDL File  ; C:/Users/mpmig/Desktop/tp3/int7seg.vhd      ;         ;
+; bin2dec_int.vhd                  ; yes             ; User VHDL File  ; C:/Users/mpmig/Desktop/tp3/bin2dec_int.vhd  ;         ;
+; decoderHex.vhd                   ; yes             ; User VHDL File  ; C:/Users/mpmig/Desktop/tp3/decoderHex.vhd   ;         ;
+; CaminhoDados.vhd                 ; yes             ; User VHDL File  ; C:/Users/mpmig/Desktop/tp3/CaminhoDados.vhd ;         ;
+; ../lab4/sumsub.vhd               ; yes             ; User VHDL File  ; C:/Users/mpmig/Desktop/lab4/sumsub.vhd      ;         ;
+; ../lab4/fulladder.vhd            ; yes             ; User VHDL File  ; C:/Users/mpmig/Desktop/lab4/fulladder.vhd   ;         ;
+; ../lab4/adder.vhd                ; yes             ; User VHDL File  ; C:/Users/mpmig/Desktop/lab4/adder.vhd       ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------+---------+
+
+
++---------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                         ;
++---------------------------------------------+-----------------------+
+; Resource                                    ; Usage                 ;
++---------------------------------------------+-----------------------+
+; Estimated Total logic elements              ; 52                    ;
+;                                             ;                       ;
+; Total combinational functions               ; 52                    ;
+; Logic element usage by number of LUT inputs ;                       ;
+;     -- 4 input functions                    ; 28                    ;
+;     -- 3 input functions                    ; 16                    ;
+;     -- <=2 input functions                  ; 8                     ;
+;                                             ;                       ;
+; Logic elements by mode                      ;                       ;
+;     -- normal mode                          ; 52                    ;
+;     -- arithmetic mode                      ; 0                     ;
+;                                             ;                       ;
+; Total registers                             ; 14                    ;
+;     -- Dedicated logic registers            ; 14                    ;
+;     -- I/O registers                        ; 0                     ;
+;                                             ;                       ;
+; I/O pins                                    ; 52                    ;
+;                                             ;                       ;
+; Embedded Multiplier 9-bit elements          ; 0                     ;
+;                                             ;                       ;
+; Maximum fan-out node                        ; ROM:U_ROM|FFD:U_FF1|Q ;
+; Maximum fan-out                             ; 22                    ;
+; Total fan-out                               ; 297                   ;
+; Average fan-out                             ; 1.75                  ;
++---------------------------------------------+-----------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                          ;
++------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------+--------------+--------------+
+; Compilation Hierarchy Node         ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                  ; Entity Name  ; Library Name ;
++------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------+--------------+--------------+
+; |divisor                           ; 52 (0)              ; 14 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 52   ; 0            ; 0          ; |divisor                                                                             ; divisor      ; work         ;
+;    |ROM:U_ROM|                     ; 7 (7)               ; 2 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |divisor|ROM:U_ROM                                                                   ; ROM          ; work         ;
+;       |FFD:U_FF0|                  ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |divisor|ROM:U_ROM|FFD:U_FF0                                                         ; FFD          ; work         ;
+;       |FFD:U_FF1|                  ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |divisor|ROM:U_ROM|FFD:U_FF1                                                         ; FFD          ; work         ;
+;    |caminhoDados:U_caminhoDados|   ; 45 (0)              ; 12 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |divisor|caminhoDados:U_caminhoDados                                                 ; caminhoDados ; work         ;
+;       |countup:Cont0|              ; 5 (0)               ; 4 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |divisor|caminhoDados:U_caminhoDados|countup:Cont0                                   ; countup      ; work         ;
+;          |adder:Adder0|            ; 1 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |divisor|caminhoDados:U_caminhoDados|countup:Cont0|adder:Adder0                      ; adder        ; work         ;
+;             |fulladder:fulladder1| ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |divisor|caminhoDados:U_caminhoDados|countup:Cont0|adder:Adder0|fulladder:fulladder1 ; fulladder    ; work         ;
+;          |mux2_1:Mux0|             ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |divisor|caminhoDados:U_caminhoDados|countup:Cont0|mux2_1:Mux0                       ; mux2_1       ; work         ;
+;          |reg4bits:reg0|           ; 0 (0)               ; 4 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |divisor|caminhoDados:U_caminhoDados|countup:Cont0|reg4bits:reg0                     ; reg4bits     ; work         ;
+;             |FFD:FFD0|             ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |divisor|caminhoDados:U_caminhoDados|countup:Cont0|reg4bits:reg0|FFD:FFD0            ; FFD          ; work         ;
+;             |FFD:FFD1|             ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |divisor|caminhoDados:U_caminhoDados|countup:Cont0|reg4bits:reg0|FFD:FFD1            ; FFD          ; work         ;
+;             |FFD:FFD2|             ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |divisor|caminhoDados:U_caminhoDados|countup:Cont0|reg4bits:reg0|FFD:FFD2            ; FFD          ; work         ;
+;             |FFD:FFD3|             ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |divisor|caminhoDados:U_caminhoDados|countup:Cont0|reg4bits:reg0|FFD:FFD3            ; FFD          ; work         ;
+;       |decoderHex:DecHex0|         ; 28 (22)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |divisor|caminhoDados:U_caminhoDados|decoderHex:DecHex0                              ; decoderHex   ; work         ;
+;          |bin2dec_int:Ua|          ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |divisor|caminhoDados:U_caminhoDados|decoderHex:DecHex0|bin2dec_int:Ua               ; bin2dec_int  ; work         ;
+;          |bin2dec_int:Ub|          ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |divisor|caminhoDados:U_caminhoDados|decoderHex:DecHex0|bin2dec_int:Ub               ; bin2dec_int  ; work         ;
+;          |int7seg:UQ0|             ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |divisor|caminhoDados:U_caminhoDados|decoderHex:DecHex0|int7seg:UQ0                  ; int7seg      ; work         ;
+;          |int7seg:UR0|             ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |divisor|caminhoDados:U_caminhoDados|decoderHex:DecHex0|int7seg:UR0                  ; int7seg      ; work         ;
+;       |mux2_1:Mux0|                ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |divisor|caminhoDados:U_caminhoDados|mux2_1:Mux0                                     ; mux2_1       ; work         ;
+;       |reg4bits:Reg0|              ; 0 (0)               ; 4 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |divisor|caminhoDados:U_caminhoDados|reg4bits:Reg0                                   ; reg4bits     ; work         ;
+;          |FFD:FFD0|                ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |divisor|caminhoDados:U_caminhoDados|reg4bits:Reg0|FFD:FFD0                          ; FFD          ; work         ;
+;          |FFD:FFD1|                ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |divisor|caminhoDados:U_caminhoDados|reg4bits:Reg0|FFD:FFD1                          ; FFD          ; work         ;
+;          |FFD:FFD2|                ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |divisor|caminhoDados:U_caminhoDados|reg4bits:Reg0|FFD:FFD2                          ; FFD          ; work         ;
+;          |FFD:FFD3|                ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |divisor|caminhoDados:U_caminhoDados|reg4bits:Reg0|FFD:FFD3                          ; FFD          ; work         ;
+;       |reg4bits:Reg1|              ; 4 (0)               ; 4 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |divisor|caminhoDados:U_caminhoDados|reg4bits:Reg1                                   ; reg4bits     ; work         ;
+;          |FFD:FFD0|                ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |divisor|caminhoDados:U_caminhoDados|reg4bits:Reg1|FFD:FFD0                          ; FFD          ; work         ;
+;          |FFD:FFD1|                ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |divisor|caminhoDados:U_caminhoDados|reg4bits:Reg1|FFD:FFD1                          ; FFD          ; work         ;
+;          |FFD:FFD2|                ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |divisor|caminhoDados:U_caminhoDados|reg4bits:Reg1|FFD:FFD2                          ; FFD          ; work         ;
+;          |FFD:FFD3|                ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |divisor|caminhoDados:U_caminhoDados|reg4bits:Reg1|FFD:FFD3                          ; FFD          ; work         ;
+;       |sumsub:Sub0|                ; 3 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |divisor|caminhoDados:U_caminhoDados|sumsub:Sub0                                     ; sumsub       ; work         ;
+;          |adder:adder0|            ; 3 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |divisor|caminhoDados:U_caminhoDados|sumsub:Sub0|adder:adder0                        ; adder        ; work         ;
+;             |fulladder:fulladder1| ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |divisor|caminhoDados:U_caminhoDados|sumsub:Sub0|adder:adder0|fulladder:fulladder1   ; fulladder    ; work         ;
+;             |fulladder:fulladder2| ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |divisor|caminhoDados:U_caminhoDados|sumsub:Sub0|adder:adder0|fulladder:fulladder2   ; fulladder    ; work         ;
++------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------+--------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 14    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 2     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 8     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                 ;
++--------------------------------------------------------------------+---------+
+; Inverted Register                                                  ; Fan out ;
++--------------------------------------------------------------------+---------+
+; caminhoDados:U_caminhoDados|countup:Cont0|reg4bits:reg0|FFD:FFD3|Q ; 11      ;
+; caminhoDados:U_caminhoDados|countup:Cont0|reg4bits:reg0|FFD:FFD2|Q ; 10      ;
+; caminhoDados:U_caminhoDados|countup:Cont0|reg4bits:reg0|FFD:FFD1|Q ; 10      ;
+; caminhoDados:U_caminhoDados|countup:Cont0|reg4bits:reg0|FFD:FFD0|Q ; 9       ;
+; caminhoDados:U_caminhoDados|reg4bits:Reg0|FFD:FFD3|Q               ; 11      ;
+; caminhoDados:U_caminhoDados|reg4bits:Reg0|FFD:FFD2|Q               ; 10      ;
+; caminhoDados:U_caminhoDados|reg4bits:Reg0|FFD:FFD1|Q               ; 11      ;
+; caminhoDados:U_caminhoDados|reg4bits:Reg0|FFD:FFD0|Q               ; 10      ;
+; caminhoDados:U_caminhoDados|reg4bits:Reg1|FFD:FFD0|Q               ; 2       ;
+; caminhoDados:U_caminhoDados|reg4bits:Reg1|FFD:FFD1|Q               ; 3       ;
+; caminhoDados:U_caminhoDados|reg4bits:Reg1|FFD:FFD2|Q               ; 2       ;
+; caminhoDados:U_caminhoDados|reg4bits:Reg1|FFD:FFD3|Q               ; 3       ;
+; Total number of inverted registers = 12                            ;         ;
++--------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "caminhoDados:U_caminhoDados|decoderHex:DecHex0|bin2dec_int:Ub" ;
++-----------+-------+----------+------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                    ;
++-----------+-------+----------+------------------------------------------------------------+
+; bin[7..4] ; Input ; Info     ; Stuck at GND                                               ;
++-----------+-------+----------+------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "caminhoDados:U_caminhoDados|decoderHex:DecHex0|bin2dec_int:Ua" ;
++-----------+-------+----------+------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                    ;
++-----------+-------+----------+------------------------------------------------------------+
+; bin[7..4] ; Input ; Info     ; Stuck at GND                                               ;
++-----------+-------+----------+------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "caminhoDados:U_caminhoDados|sumsub:Sub0"                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; cbi   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; opau  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; b3xor ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "caminhoDados:U_caminhoDados|countup:Cont0|reg4bits:reg0|FFD:FFD3" ;
++-------+-------+----------+-------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                           ;
++-------+-------+----------+-------------------------------------------------------------------+
+; reset ; Input ; Info     ; Stuck at GND                                                      ;
+; set   ; Input ; Info     ; Stuck at GND                                                      ;
++-------+-------+----------+-------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "caminhoDados:U_caminhoDados|countup:Cont0|reg4bits:reg0|FFD:FFD2" ;
++-------+-------+----------+-------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                           ;
++-------+-------+----------+-------------------------------------------------------------------+
+; reset ; Input ; Info     ; Stuck at GND                                                      ;
+; set   ; Input ; Info     ; Stuck at GND                                                      ;
++-------+-------+----------+-------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "caminhoDados:U_caminhoDados|countup:Cont0|reg4bits:reg0|FFD:FFD1" ;
++-------+-------+----------+-------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                           ;
++-------+-------+----------+-------------------------------------------------------------------+
+; reset ; Input ; Info     ; Stuck at GND                                                      ;
+; set   ; Input ; Info     ; Stuck at GND                                                      ;
++-------+-------+----------+-------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "caminhoDados:U_caminhoDados|countup:Cont0|reg4bits:reg0|FFD:FFD0" ;
++-------+-------+----------+-------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                           ;
++-------+-------+----------+-------------------------------------------------------------------+
+; reset ; Input ; Info     ; Stuck at GND                                                      ;
+; set   ; Input ; Info     ; Stuck at GND                                                      ;
++-------+-------+----------+-------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "caminhoDados:U_caminhoDados|countup:Cont0|reg4bits:reg0" ;
++------+-------+----------+-----------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                   ;
++------+-------+----------+-----------------------------------------------------------+
+; e    ; Input ; Info     ; Stuck at VCC                                              ;
++------+-------+----------+-----------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "caminhoDados:U_caminhoDados|countup:Cont0|adder:Adder0"                                ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; a[3..1] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; cyi     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; c4      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "caminhoDados:U_caminhoDados|countup:Cont0"                                            ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; datain ; Input  ; Info     ; Stuck at GND                                                                        ;
+; tc     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "ROM:U_ROM|FFD:U_FF1" ;
++------+-------+----------+-----------------------+
+; Port ; Type  ; Severity ; Details               ;
++------+-------+----------+-----------------------+
+; set  ; Input ; Info     ; Stuck at GND          ;
+; en   ; Input ; Info     ; Stuck at VCC          ;
++------+-------+----------+-----------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "ROM:U_ROM|FFD:U_FF0" ;
++------+-------+----------+-----------------------+
+; Port ; Type  ; Severity ; Details               ;
++------+-------+----------+-----------------------+
+; set  ; Input ; Info     ; Stuck at GND          ;
+; en   ; Input ; Info     ; Stuck at VCC          ;
++------+-------+----------+-----------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 52                          ;
+; cycloneiii_ff         ; 14                          ;
+;     CLR               ; 2                           ;
+;     ENA               ; 8                           ;
+;     plain             ; 4                           ;
+; cycloneiii_lcell_comb ; 62                          ;
+;     normal            ; 62                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 13                          ;
+;         2 data inputs ; 4                           ;
+;         3 data inputs ; 16                          ;
+;         4 data inputs ; 28                          ;
+;                       ;                             ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 1.89                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Mon Jan 09 15:04:16 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off tp3 -c tp3
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file divisor.vhd
+    Info (12022): Found design unit 1: divisor-arq_divisor File: C:/Users/mpmig/Desktop/tp3/divisor.vhd Line: 17
+    Info (12023): Found entity 1: divisor File: C:/Users/mpmig/Desktop/tp3/divisor.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file rom.vhd
+    Info (12022): Found design unit 1: ROM-arq_ROM File: C:/Users/mpmig/Desktop/tp3/ROM.vhd Line: 11
+    Info (12023): Found entity 1: ROM File: C:/Users/mpmig/Desktop/tp3/ROM.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /users/mpmig/desktop/lab5/reg4bits.vhd
+    Info (12022): Found design unit 1: reg4bits-reg4bits File: C:/Users/mpmig/Desktop/lab5/reg4bits.vhd Line: 12
+    Info (12023): Found entity 1: reg4bits File: C:/Users/mpmig/Desktop/lab5/reg4bits.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /users/mpmig/desktop/lab5/mux2_1.vhd
+    Info (12022): Found design unit 1: mux2_1-mux2_1 File: C:/Users/mpmig/Desktop/lab5/mux2_1.vhd Line: 12
+    Info (12023): Found entity 1: mux2_1 File: C:/Users/mpmig/Desktop/lab5/mux2_1.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /users/mpmig/desktop/lab5/ffd.vhd
+    Info (12022): Found design unit 1: FFD-logicFunction File: C:/Users/mpmig/Desktop/lab5/FFD.vhd Line: 14
+    Info (12023): Found entity 1: FFD File: C:/Users/mpmig/Desktop/lab5/FFD.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /users/mpmig/desktop/lab5/countup.vhd
+    Info (12022): Found design unit 1: countup-countup File: C:/Users/mpmig/Desktop/lab5/countup.vhd Line: 12
+    Info (12023): Found entity 1: countup File: C:/Users/mpmig/Desktop/lab5/countup.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file int7seg.vhd
+    Info (12022): Found design unit 1: int7seg-logicFunction File: C:/Users/mpmig/Desktop/tp3/int7seg.vhd Line: 10
+    Info (12023): Found entity 1: int7seg File: C:/Users/mpmig/Desktop/tp3/int7seg.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file divisor_tb.vhd
+    Info (12022): Found design unit 1: divisor_tb-behavior File: C:/Users/mpmig/Desktop/tp3/divisor_tb.vhd Line: 9
+    Info (12023): Found entity 1: divisor_tb File: C:/Users/mpmig/Desktop/tp3/divisor_tb.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file bin2dec_int.vhd
+    Info (12022): Found design unit 1: bin2dec_int-Behavioral File: C:/Users/mpmig/Desktop/tp3/bin2dec_int.vhd Line: 11
+    Info (12023): Found entity 1: bin2dec_int File: C:/Users/mpmig/Desktop/tp3/bin2dec_int.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file decoderhex.vhd
+    Info (12022): Found design unit 1: decoderHex-logicFuntion File: C:/Users/mpmig/Desktop/tp3/decoderHex.vhd Line: 12
+    Info (12023): Found entity 1: decoderHex File: C:/Users/mpmig/Desktop/tp3/decoderHex.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file caminhodados.vhd
+    Info (12022): Found design unit 1: caminhoDados-caminhoDados File: C:/Users/mpmig/Desktop/tp3/CaminhoDados.vhd Line: 15
+    Info (12023): Found entity 1: caminhoDados File: C:/Users/mpmig/Desktop/tp3/CaminhoDados.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /users/mpmig/desktop/lab4/sumsub.vhd
+    Info (12022): Found design unit 1: sumsub-sumsub File: C:/Users/mpmig/Desktop/lab4/sumsub.vhd Line: 15
+    Info (12023): Found entity 1: sumsub File: C:/Users/mpmig/Desktop/lab4/sumsub.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /users/mpmig/desktop/lab4/fulladder.vhd
+    Info (12022): Found design unit 1: fulladder-fulladder File: C:/Users/mpmig/Desktop/lab4/fulladder.vhd Line: 14
+    Info (12023): Found entity 1: fulladder File: C:/Users/mpmig/Desktop/lab4/fulladder.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /users/mpmig/desktop/lab4/adder.vhd
+    Info (12022): Found design unit 1: adder-adder File: C:/Users/mpmig/Desktop/lab4/adder.vhd Line: 14
+    Info (12023): Found entity 1: adder File: C:/Users/mpmig/Desktop/lab4/adder.vhd Line: 4
+Info (12127): Elaborating entity "divisor" for the top level hierarchy
+Info (12128): Elaborating entity "ROM" for hierarchy "ROM:U_ROM" File: C:/Users/mpmig/Desktop/tp3/divisor.vhd Line: 41
+Info (12128): Elaborating entity "FFD" for hierarchy "ROM:U_ROM|FFD:U_FF0" File: C:/Users/mpmig/Desktop/tp3/ROM.vhd Line: 49
+Info (12128): Elaborating entity "caminhoDados" for hierarchy "caminhoDados:U_caminhoDados" File: C:/Users/mpmig/Desktop/tp3/divisor.vhd Line: 60
+Info (12128): Elaborating entity "countup" for hierarchy "caminhoDados:U_caminhoDados|countup:Cont0" File: C:/Users/mpmig/Desktop/tp3/CaminhoDados.vhd Line: 65
+Info (12128): Elaborating entity "adder" for hierarchy "caminhoDados:U_caminhoDados|countup:Cont0|adder:Adder0" File: C:/Users/mpmig/Desktop/lab5/countup.vhd Line: 41
+Info (12128): Elaborating entity "fulladder" for hierarchy "caminhoDados:U_caminhoDados|countup:Cont0|adder:Adder0|fulladder:fulladder0" File: C:/Users/mpmig/Desktop/lab4/adder.vhd Line: 29
+Info (12128): Elaborating entity "mux2_1" for hierarchy "caminhoDados:U_caminhoDados|countup:Cont0|mux2_1:Mux0" File: C:/Users/mpmig/Desktop/lab5/countup.vhd Line: 51
+Info (12128): Elaborating entity "reg4bits" for hierarchy "caminhoDados:U_caminhoDados|countup:Cont0|reg4bits:reg0" File: C:/Users/mpmig/Desktop/lab5/countup.vhd Line: 58
+Info (12128): Elaborating entity "sumsub" for hierarchy "caminhoDados:U_caminhoDados|sumsub:Sub0" File: C:/Users/mpmig/Desktop/tp3/CaminhoDados.vhd Line: 97
+Info (12128): Elaborating entity "decoderHex" for hierarchy "caminhoDados:U_caminhoDados|decoderHex:DecHex0" File: C:/Users/mpmig/Desktop/tp3/CaminhoDados.vhd Line: 106
+Info (12128): Elaborating entity "bin2dec_int" for hierarchy "caminhoDados:U_caminhoDados|decoderHex:DecHex0|bin2dec_int:Ua" File: C:/Users/mpmig/Desktop/tp3/decoderHex.vhd Line: 43
+Info (12128): Elaborating entity "int7seg" for hierarchy "caminhoDados:U_caminhoDados|decoderHex:DecHex0|int7seg:UQ0" File: C:/Users/mpmig/Desktop/tp3/decoderHex.vhd Line: 46
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX0[7]" is stuck at VCC File: C:/Users/mpmig/Desktop/tp3/divisor.vhd Line: 12
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: C:/Users/mpmig/Desktop/tp3/divisor.vhd Line: 12
+    Warning (13410): Pin "HEX1[7]" is stuck at VCC File: C:/Users/mpmig/Desktop/tp3/divisor.vhd Line: 12
+    Warning (13410): Pin "HEX4[7]" is stuck at VCC File: C:/Users/mpmig/Desktop/tp3/divisor.vhd Line: 12
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: C:/Users/mpmig/Desktop/tp3/divisor.vhd Line: 12
+    Warning (13410): Pin "HEX5[7]" is stuck at VCC File: C:/Users/mpmig/Desktop/tp3/divisor.vhd Line: 12
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 104 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 41 output pins
+    Info (21061): Implemented 52 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 4800 megabytes
+    Info: Processing ended: Mon Jan 09 15:04:25 2023
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:14
+
+

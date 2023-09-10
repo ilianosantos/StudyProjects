@@ -1,0 +1,595 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/mpmig/Desktop/tp3/simulation/modelsim
+Eadder
+Z1 w1667645202
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 12
+R0
+Z4 8C:/Users/mpmig/Desktop/lab4/adder.vhd
+Z5 FC:/Users/mpmig/Desktop/lab4/adder.vhd
+l0
+L4 1
+VgHh7;0;1YEQkI24bI8ohR0
+!s100 cj;Xi?>HmBUF<_jTQ_OfM1
+Z6 OV;C;2020.1;71
+31
+Z7 !s110 1673277518
+!i10b 1
+Z8 !s108 1673277518.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/mpmig/Desktop/lab4/adder.vhd|
+Z10 !s107 C:/Users/mpmig/Desktop/lab4/adder.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Aadder
+R2
+R3
+DEx4 work 5 adder 0 22 gHh7;0;1YEQkI24bI8ohR0
+!i122 12
+l27
+L14 47
+V_>:Bg8O^jZ:HX6eMB0j_a1
+!s100 FD0:9lX9e3OaRg3T1jzcV0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Ebin2dec_int
+Z13 w1672014499
+Z14 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z15 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+R2
+R3
+!i122 7
+R0
+Z16 8C:/Users/mpmig/Desktop/tp3/bin2dec_int.vhd
+Z17 FC:/Users/mpmig/Desktop/tp3/bin2dec_int.vhd
+l0
+L6 1
+VCj6_La69ZAT4[nHN3_CPo0
+!s100 T8kAG64cc5oZm^IWlC:Qe1
+R6
+31
+Z18 !s110 1673277517
+!i10b 1
+Z19 !s108 1673277517.000000
+Z20 !s90 -reportprogress|300|-93|-work|work|C:/Users/mpmig/Desktop/tp3/bin2dec_int.vhd|
+Z21 !s107 C:/Users/mpmig/Desktop/tp3/bin2dec_int.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R14
+R15
+R2
+R3
+DEx4 work 11 bin2dec_int 0 22 Cj6_La69ZAT4[nHN3_CPo0
+!i122 7
+l13
+L11 31
+Vb=GSSZU]1DhPIR=IkT9OW3
+!s100 <:<AzC<T?g<=gZ[_:aROb3
+R6
+31
+R18
+!i10b 1
+R19
+R20
+R21
+!i113 1
+R11
+R12
+Ecaminhodados
+Z22 w1672918336
+R2
+R3
+!i122 9
+R0
+Z23 8C:/Users/mpmig/Desktop/tp3/CaminhoDados.vhd
+Z24 FC:/Users/mpmig/Desktop/tp3/CaminhoDados.vhd
+l0
+L4 1
+VNWokPziB=AUmiF;Ph:WVV2
+!s100 z>2AizS<8IYN_S@X:DYKJ0
+R6
+31
+R7
+!i10b 1
+R8
+Z25 !s90 -reportprogress|300|-93|-work|work|C:/Users/mpmig/Desktop/tp3/CaminhoDados.vhd|
+Z26 !s107 C:/Users/mpmig/Desktop/tp3/CaminhoDados.vhd|
+!i113 1
+R11
+R12
+Acaminhodados
+R2
+R3
+DEx4 work 12 caminhodados 0 22 NWokPziB=AUmiF;Ph:WVV2
+!i122 9
+l63
+L15 106
+V?hjTckbXCA[8zEADg4UHA1
+!s100 QJMbD:_6=14M<;L1W0V1_3
+R6
+31
+R7
+!i10b 1
+R8
+R25
+R26
+!i113 1
+R11
+R12
+Ecountup
+Z27 w1672847948
+R2
+R3
+!i122 5
+R0
+Z28 8C:/Users/mpmig/Desktop/lab5/countup.vhd
+Z29 FC:/Users/mpmig/Desktop/lab5/countup.vhd
+l0
+L4 1
+VF9YZPWVOGzPOHJ5RXKMiZ0
+!s100 LE8DOhz5S>hVG;TJ9SQ0>0
+R6
+31
+Z30 !s110 1673277516
+!i10b 1
+Z31 !s108 1673277516.000000
+Z32 !s90 -reportprogress|300|-93|-work|work|C:/Users/mpmig/Desktop/lab5/countup.vhd|
+Z33 !s107 C:/Users/mpmig/Desktop/lab5/countup.vhd|
+!i113 1
+R11
+R12
+Acountup
+R2
+R3
+DEx4 work 7 countup 0 22 F9YZPWVOGzPOHJ5RXKMiZ0
+!i122 5
+l39
+L12 59
+VWNV7b=O;UazE5[eH8;elk1
+!s100 MLSn^1EBz8MoMQ19Q?M1j3
+R6
+31
+R30
+!i10b 1
+R31
+R32
+R33
+!i113 1
+R11
+R12
+Edecoderhex
+Z34 w1672011499
+R2
+R3
+!i122 8
+R0
+Z35 8C:/Users/mpmig/Desktop/tp3/decoderHex.vhd
+Z36 FC:/Users/mpmig/Desktop/tp3/decoderHex.vhd
+l0
+L4 1
+VXDZ<eBCzP[P5m=81T`WDN2
+!s100 kZ:@<BKcU^YEb3V]YEg:^2
+R6
+31
+R18
+!i10b 1
+R19
+Z37 !s90 -reportprogress|300|-93|-work|work|C:/Users/mpmig/Desktop/tp3/decoderHex.vhd|
+Z38 !s107 C:/Users/mpmig/Desktop/tp3/decoderHex.vhd|
+!i113 1
+R11
+R12
+Alogicfuntion
+R2
+R3
+DEx4 work 10 decoderhex 0 22 XDZ<eBCzP[P5m=81T`WDN2
+!i122 8
+l38
+L12 46
+V[PZ?ZPYQHEk;McnJ<BFE82
+!s100 [AW`hO[`[m4c2jlG`aE^K1
+R6
+31
+R18
+!i10b 1
+R19
+R37
+R38
+!i113 1
+R11
+R12
+Edivisor
+Z39 w1672918389
+R2
+R3
+!i122 0
+R0
+Z40 8C:/Users/mpmig/Desktop/tp3/divisor.vhd
+Z41 FC:/Users/mpmig/Desktop/tp3/divisor.vhd
+l0
+L4 1
+VDichlkQ1f0b97h>]_k2g20
+!s100 Uh_3RGKADTfU9LbmSmdPk1
+R6
+31
+Z42 !s110 1673277515
+!i10b 1
+Z43 !s108 1673277515.000000
+Z44 !s90 -reportprogress|300|-93|-work|work|C:/Users/mpmig/Desktop/tp3/divisor.vhd|
+Z45 !s107 C:/Users/mpmig/Desktop/tp3/divisor.vhd|
+!i113 1
+R11
+R12
+Aarq_divisor
+R2
+R3
+DEx4 work 7 divisor 0 22 DichlkQ1f0b97h>]_k2g20
+!i122 0
+l39
+L17 67
+V:jMYGHhjz;7YJ[JDBfmnh1
+!s100 AJzk38a;oe9LJHACQ@Lc30
+R6
+31
+R42
+!i10b 1
+R43
+R44
+R45
+!i113 1
+R11
+R12
+Edivisor_tb
+R13
+R14
+R15
+R2
+R3
+!i122 14
+R0
+Z46 8C:/Users/mpmig/Desktop/tp3/divisor_tb.vhd
+Z47 FC:/Users/mpmig/Desktop/tp3/divisor_tb.vhd
+l0
+L6 1
+VKJ>zYAeO_m0mCB1fTgZR13
+!s100 FAjP85E>8Nm2VaZbPlQ343
+R6
+32
+Z48 !s110 1673277528
+!i10b 1
+Z49 !s108 1673277528.000000
+Z50 !s90 -reportprogress|300|-work|work|C:/Users/mpmig/Desktop/tp3/divisor_tb.vhd|
+Z51 !s107 C:/Users/mpmig/Desktop/tp3/divisor_tb.vhd|
+!i113 1
+Z52 o-work work
+R12
+Abehavior
+R14
+R15
+R2
+R3
+Z53 DEx4 work 10 divisor_tb 0 22 KJ>zYAeO_m0mCB1fTgZR13
+!i122 14
+l36
+Z54 L9 79
+Z55 VGF;3OFld4Wo^;JhzfOGK@0
+Z56 !s100 XVD1k=NTB4UeH^Gm;BN=>1
+R6
+32
+R48
+!i10b 1
+R49
+R50
+R51
+!i113 1
+R52
+R12
+Effd
+Z57 w1669806940
+R2
+R3
+!i122 4
+R0
+Z58 8C:/Users/mpmig/Desktop/lab5/FFD.vhd
+Z59 FC:/Users/mpmig/Desktop/lab5/FFD.vhd
+l0
+L4 1
+VlLnJhUY99`]7^:0M0ZT@z3
+!s100 7zIA7N0c8k?G4DH:]Q7>;3
+R6
+31
+R30
+!i10b 1
+R31
+Z60 !s90 -reportprogress|300|-93|-work|work|C:/Users/mpmig/Desktop/lab5/FFD.vhd|
+Z61 !s107 C:/Users/mpmig/Desktop/lab5/FFD.vhd|
+!i113 1
+R11
+R12
+Alogicfunction
+R2
+R3
+DEx4 work 3 ffd 0 22 lLnJhUY99`]7^:0M0ZT@z3
+!i122 4
+l16
+L14 9
+VXLGJhA0YLNkWk3eiz=LFX0
+!s100 EbhLHDh93W5h:OfQP8>M81
+R6
+31
+R30
+!i10b 1
+R31
+R60
+R61
+!i113 1
+R11
+R12
+Efulladder
+Z62 w1667561843
+R2
+R3
+!i122 11
+R0
+Z63 8C:/Users/mpmig/Desktop/lab4/fulladder.vhd
+Z64 FC:/Users/mpmig/Desktop/lab4/fulladder.vhd
+l0
+L4 1
+V4e`Yl4?U0H32mBnJKh04N2
+!s100 cjm=R?ec_5j4<6ndAYbUC1
+R6
+31
+R7
+!i10b 1
+R8
+Z65 !s90 -reportprogress|300|-93|-work|work|C:/Users/mpmig/Desktop/lab4/fulladder.vhd|
+Z66 !s107 C:/Users/mpmig/Desktop/lab4/fulladder.vhd|
+!i113 1
+R11
+R12
+Afulladder
+R2
+R3
+DEx4 work 9 fulladder 0 22 4e`Yl4?U0H32mBnJKh04N2
+!i122 11
+l15
+L14 5
+Vf@R`Ek[Q8X9bgi>GYk<]^0
+!s100 eeh<1WnEGTEn9`X4DdXHf3
+R6
+31
+R7
+!i10b 1
+R8
+R65
+R66
+!i113 1
+R11
+R12
+Eint7seg
+R13
+R2
+R3
+!i122 6
+R0
+Z67 8C:/Users/mpmig/Desktop/tp3/int7seg.vhd
+Z68 FC:/Users/mpmig/Desktop/tp3/int7seg.vhd
+l0
+L4 1
+V_cLR;_R9`8hZgb@8V9U_73
+!s100 AT@lQN65nQ=dI[E:C;nJF3
+R6
+31
+R18
+!i10b 1
+R19
+Z69 !s90 -reportprogress|300|-93|-work|work|C:/Users/mpmig/Desktop/tp3/int7seg.vhd|
+Z70 !s107 C:/Users/mpmig/Desktop/tp3/int7seg.vhd|
+!i113 1
+R11
+R12
+Alogicfunction
+R2
+R3
+DEx4 work 7 int7seg 0 22 _cLR;_R9`8hZgb@8V9U_73
+!i122 6
+l14
+L10 36
+VAG5K>g5BP;B?>BIB[o[@63
+!s100 kQ_P9koYMf1fIYB8bOezO1
+R6
+31
+R18
+!i10b 1
+R19
+R69
+R70
+!i113 1
+R11
+R12
+Emux2_1
+Z71 w1671023773
+R2
+R3
+!i122 3
+R0
+Z72 8C:/Users/mpmig/Desktop/lab5/mux2_1.vhd
+Z73 FC:/Users/mpmig/Desktop/lab5/mux2_1.vhd
+l0
+L4 1
+V2PSW65E]3VdFZYY0<dYk?3
+!s100 O7j`JN32EeoQ3gMoYQ@W43
+R6
+31
+R30
+!i10b 1
+R31
+Z74 !s90 -reportprogress|300|-93|-work|work|C:/Users/mpmig/Desktop/lab5/mux2_1.vhd|
+Z75 !s107 C:/Users/mpmig/Desktop/lab5/mux2_1.vhd|
+!i113 1
+R11
+R12
+Amux2_1
+R2
+R3
+DEx4 work 6 mux2_1 0 22 2PSW65E]3VdFZYY0<dYk?3
+!i122 3
+l14
+L12 8
+V_AEkcUVlP3[imA0a_]?gg0
+!s100 Ff`V]2^g7hn<lmWaM=;Cl0
+R6
+31
+R30
+!i10b 1
+R31
+R74
+R75
+!i113 1
+R11
+R12
+Ereg4bits
+Z76 w1671024261
+R2
+R3
+!i122 2
+R0
+Z77 8C:/Users/mpmig/Desktop/lab5/reg4bits.vhd
+Z78 FC:/Users/mpmig/Desktop/lab5/reg4bits.vhd
+l0
+L4 1
+VN15[Fj=mX_ez:iB7^40W>3
+!s100 FNE=@J:<4O?T4mPA4^0b70
+R6
+31
+R30
+!i10b 1
+R31
+Z79 !s90 -reportprogress|300|-93|-work|work|C:/Users/mpmig/Desktop/lab5/reg4bits.vhd|
+Z80 !s107 C:/Users/mpmig/Desktop/lab5/reg4bits.vhd|
+!i113 1
+R11
+R12
+Areg4bits
+R2
+R3
+DEx4 work 8 reg4bits 0 22 N15[Fj=mX_ez:iB7^40W>3
+!i122 2
+l24
+L12 51
+V]_Hc1IF^Phdhj^l]86]KP0
+!s100 V@SMKS;DZ<1eS^mUkiVWQ3
+R6
+31
+R30
+!i10b 1
+R31
+R79
+R80
+!i113 1
+R11
+R12
+Erom
+Z81 w1673017920
+Z82 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+R2
+R3
+!i122 1
+R0
+Z83 8C:/Users/mpmig/Desktop/tp3/ROM.vhd
+Z84 FC:/Users/mpmig/Desktop/tp3/ROM.vhd
+l0
+L5 1
+V:0=DNSC7JW5O<iLXlM?bU0
+!s100 90;B]oJRT>BkfzFMV><U00
+R6
+31
+R30
+!i10b 1
+R43
+Z85 !s90 -reportprogress|300|-93|-work|work|C:/Users/mpmig/Desktop/tp3/ROM.vhd|
+Z86 !s107 C:/Users/mpmig/Desktop/tp3/ROM.vhd|
+!i113 1
+R11
+R12
+Aarq_rom
+R82
+R2
+R3
+DEx4 work 3 rom 0 22 :0=DNSC7JW5O<iLXlM?bU0
+!i122 1
+l47
+L11 53
+V0BTMl:g]V`k>lShA[WFo;1
+!s100 0BX0`3<j2i^f_ZQLKNRJa1
+R6
+31
+R30
+!i10b 1
+R43
+R85
+R86
+!i113 1
+R11
+R12
+Esumsub
+Z87 w1672874179
+R2
+R3
+!i122 10
+R0
+Z88 8C:/Users/mpmig/Desktop/lab4/sumsub.vhd
+Z89 FC:/Users/mpmig/Desktop/lab4/sumsub.vhd
+l0
+L4 1
+VW]n:>ojcoIGh?K[0IhJZI0
+!s100 eP3mUmm>a?4`IUSA=^G7K1
+R6
+31
+R7
+!i10b 1
+R8
+Z90 !s90 -reportprogress|300|-93|-work|work|C:/Users/mpmig/Desktop/lab4/sumsub.vhd|
+Z91 !s107 C:/Users/mpmig/Desktop/lab4/sumsub.vhd|
+!i113 1
+R11
+R12
+Asumsub
+R2
+R3
+DEx4 work 6 sumsub 0 22 W]n:>ojcoIGh?K[0IhJZI0
+!i122 10
+l29
+L15 38
+V;JYfbQ4OK>4zGjP`zFSB]0
+!s100 5ncm=7TV^KlB6kH;`lS6k0
+R6
+31
+R7
+!i10b 1
+R8
+R90
+R91
+!i113 1
+R11
+R12

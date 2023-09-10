@@ -1,0 +1,20 @@
++LIBRARY IEEE;
+use IEEE.std_logic_1164.all;
+
+entity mux2_1 is 
+
+port(
+	D, countUp: in std_logic_vector (3 downto 0);
+	PL: in std_logic;
+	Q: out std_logic_vector (3 downto 0)
+);
+end mux2_1;
+
+architecture mux2_1 of mux2_1 is
+
+begin
+Q(0) <= (D(0) and PL) or (countUp(0) and not PL);
+Q(1) <= (D(1) and PL) or (countUp(1) and not PL);
+Q(2) <= (D(2) and PL) or (countUp(2) and not PL);
+Q(3) <= (D(3) and PL) or (countUp(3) and not PL);
+end mux2_1;

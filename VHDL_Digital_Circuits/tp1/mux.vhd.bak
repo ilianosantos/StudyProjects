@@ -1,0 +1,16 @@
+LIBRARY IEEE;
+use IEEE.std_logic_1164.all;
+
+entity mux is
+port (
+		I0A, I0B, I1A, I1B : in std_logic;
+		S: in std_logic;
+		O1, O0 : out std_logic
+);
+end mux;
+
+architecture mux of mux is
+begin
+		O0 <= (I0A and !S) or (I1A and S);
+		O1 <= (I0B and !S) or (I1B and S);
+END mux;

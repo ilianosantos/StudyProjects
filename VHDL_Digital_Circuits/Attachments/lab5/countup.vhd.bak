@@ -1,0 +1,14 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY countup IS
+PORT(	DataIn : in std_logic_vector(3 downto 0);
+		CE, PL : in std_logic; 
+		Q : out std_logic_vector(3 downto 0)
+		);
+END countup;
+
+architecture countup of countup is
+component reg4bits port(
+	
+)

@@ -1,0 +1,68 @@
+# Reading C:/intelFPGA_lite/19.1/modelsim_ase/tcl/vsim/pref.tcl
+# do lab4_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/19.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/mpmig/Desktop/ISEL/LSD/lab4/fulladder.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:11:07 on Nov 23,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/mpmig/Desktop/ISEL/LSD/lab4/fulladder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity fulladder
+# -- Compiling architecture fulladder of fulladder
+# End time: 16:11:07 on Nov 23,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/mpmig/Desktop/ISEL/LSD/lab4/adder.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:11:07 on Nov 23,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/mpmig/Desktop/ISEL/LSD/lab4/adder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity adder
+# -- Compiling architecture adder of adder
+# End time: 16:11:07 on Nov 23,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/mpmig/Desktop/ISEL/LSD/lab4/sumsub.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:11:07 on Nov 23,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/mpmig/Desktop/ISEL/LSD/lab4/sumsub.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity sumsub
+# -- Compiling architecture sumsub of sumsub
+# End time: 16:11:07 on Nov 23,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/mpmig/Desktop/ISEL/LSD/lab4/flags.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:11:07 on Nov 23,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/mpmig/Desktop/ISEL/LSD/lab4/flags.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity flags
+# -- Compiling architecture flags of flags
+# End time: 16:11:07 on Nov 23,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/mpmig/Desktop/ISEL/LSD/lab4/au.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:11:07 on Nov 23,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/mpmig/Desktop/ISEL/LSD/lab4/au.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity au
+# -- Compiling architecture au of au
+# End time: 16:11:07 on Nov 23,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 

@@ -1,0 +1,132 @@
+P16 assembler v1.4.0 (Mar  6 2023)	c:\ISEL\Semestre2\AC\26D\TLabs\TP1\str2nat.lst	Fri Mar 24 20:39:24 2023
+
+Sections
+Index   Name            Address   Size
+0       .text           0000      0092 146
+
+Symbols
+Name                    Type      Value       Section
+char2nat                LABEL     0056 86     .text
+char2nat_return         LABEL     008C 140    .text
+else_if                 LABEL     0074 116    .text
+else_if_condition       LABEL     006C 108    .text
+if                      LABEL     0064 100    .text
+if2_2                   LABEL     0084 132    .text
+if_2                    LABEL     007C 124    .text
+multiply_while          LABEL     0048 72     .text
+NAN                     ABSOLUTE  FFFF 65535  .text
+number                  LABEL     0058 88     .text
+number_NAN              LABEL     0088 136    .text
+str2nat                 LABEL     0000 0      .text
+str2nat_add             LABEL     003A 58     .text
+str2nat_else            LABEL     0032 50     .text
+str2nat_if              LABEL     0024 36     .text
+str2nat_loop            LABEL     0014 20     .text
+str2nat_return          LABEL     003E 62     .text
+while_end               LABEL     0052 82     .text
+
+Code listing
+   1           	; r0/r4 = numeral [0]
+   2           	; r1/r5 = radix 
+   3           	; r2 = number
+   4           	; r3 = error
+   5           	; r6 = idx
+   6           	; r7 = tmp
+   7          	.equ NAN, 65535 ; alternativamente .equ NAN, 0xFFFF 
+   8           	str2nat:
+   9 0000 0E 24	    push lr
+  10 0002 04 24	    push r4
+  11 0004 05 24	    push r5
+  12 0006 06 24	    push r6
+  13 0008 07 24	    push r7
+  14 000A 04 B0	    mov r4, r0
+  15 000C 85 B0	    mov r5, r1
+  16 000E 02 60	    mov r2, #0
+  17 0010 03 60	    mov r3, #0
+  18 0012 06 60	    mov r6, #0
+  19           	str2nat_loop:
+  20 0014 07 60	    mov r7, #0
+  21 0016 B0 BB	    cmp r3, r7
+  22 0018 12 44	    bne str2nat_return
+  23 001A 07 60	    mov r7, #'\0'
+  24 001C 40 1B	    ldrb r0, [r4, r6]
+  25 001E 80 BB	    cmp r0, r7
+  26 0020 0E 40	    beq str2nat_return
+  27 0022 19 5C	    bl char2nat
+  28           	str2nat_if:
+  29 0024 F7 6F	    mov r7, #255
+  30 0026 F7 7F	    movt r7, #255
+  31 0028 80 BB	    cmp r0, r7
+  32 002A 03 44	    bne str2nat_else
+  33 002C 82 B3	    mov r2, r7
+  34 002E 13 60	    mov r3, #1
+  35 0030 04 58	    b str2nat_add
+  36           	str2nat_else:
+  37 0032 07 60	    mov r7, #0 
+  38 0034 09 5C	    bl multiply_while
+  39 0036 22 80	    add r2, r2, r0
+  40 0038 00 58	    b str2nat_add
+  41           	str2nat_add:
+  42 003A E6 A0	    add r6, r6, #1
+  43 003C EB 5B	    b str2nat_loop
+  44           	str2nat_return:
+  45 003E 07 04	    pop r7
+  46 0040 06 04	    pop r6
+  47 0042 05 04	    pop r5
+  48 0044 04 04	    pop r4
+  49 0046 0F 04	    pop pc
+  50           	
+  51           	multiply_while:
+  52 0048 B0 BB	    cmp r3, r7
+  53 004A 03 4C	    bhs while_end
+  54 004C A2 80	    add r2, r2, r1
+  55 004E 91 A8	    sub r1, r1, #1
+  56 0050 FB 5B	    b multiply_while
+  57           	while_end:
+  58 0052 00 B1	    mov r0, r2
+  59 0054 0F B7	    mov pc, lr
+  60           	;------------------------------
+  61           	; r0 = char symbol 
+  62           	; r1 = uint16_t radix
+  63           	; r2 = NAN
+  64           	; r3, r4 = temp
+  65           	; 2. alínea c)
+  66           	char2nat:
+  67 0056 04 24	    push r4
+  68           	number:
+  69 0058 F2 6F	    mov r2, #NAN & 0xFF
+  70 005A F2 7F	    movt r2, #(NAN >> 8) & 0xFF
+  71 005C 03 63	    mov r3, #'0'
+  72 005E 94 63	    mov r4, #'9'
+  73 0060 80 B9	    cmp r0, r3
+  74 0062 04 48	    blo else_if_condition
+  75           	if:
+  76 0064 40 B8	    cmp r4, r0
+  77 0066 02 48	    blo else_if_condition
+  78 0068 82 89	    sub r2, r0, r3 ;retorno em r0
+  79 006A 08 58	    b   if_2
+  80           	else_if_condition:
+  81 006C 13 64	    mov r3, #'A'
+  82 006E 64 64	    mov r4, #'F'
+  83 0070 80 B9	    cmp r0, r3
+  84 0072 04 48	    blo if_2
+  85           	else_if:
+  86 0074 40 B8	    cmp r4, r0
+  87 0076 02 48	    blo if_2
+  88 0078 80 89	    sub r0, r0, r3
+  89 007A 02 A5	    add r2, r0, #10 ;retorno em r0
+  90           	if_2:
+  91 007C 03 61	    mov r3, #16
+  92 007E B0 B8	    cmp r3, r1
+  93 0080 01 4C	    bhs if2_2
+  94 0082 02 58	    b number_NAN
+  95           	if2_2:
+  96 0084 A0 B8	    cmp r2, r1
+  97 0086 02 48	    blo char2nat_return
+  98           	number_NAN:
+  99 0088 F2 6F	    mov r2, #255 ;mov r2, #0xFF
+ 100 008A F2 7F	    movt r2, #255 ;movt r2, #0xFF
+ 101           	char2nat_return:
+ 102 008C 00 B1	    mov r0, r2
+ 103 008E 04 04	    pop r4
+ 104 0090 0F 04	    pop pc

@@ -1,0 +1,170 @@
+# Reading C:/intelFPGA_lite/19.1/modelsim_ase/tcl/vsim/pref.tcl
+# do lab5_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/19.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/mpmig/ISEL/LSD/lab4/fulladder.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:52:51 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/mpmig/ISEL/LSD/lab4/fulladder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity fulladder
+# -- Compiling architecture fulladder of fulladder
+# End time: 12:52:52 on Nov 30,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/mpmig/ISEL/LSD/tp2/mux2_1.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:52:52 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/mpmig/ISEL/LSD/tp2/mux2_1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux2_1
+# -- Compiling architecture mux2_1 of mux2_1
+# End time: 12:52:52 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/mpmig/ISEL/LSD/lab4/adder.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:52:52 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/mpmig/ISEL/LSD/lab4/adder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity adder
+# -- Compiling architecture adder of adder
+# End time: 12:52:52 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/mpmig/ISEL/LSD/lab5/int7seg.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:52:52 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/mpmig/ISEL/LSD/lab5/int7seg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity int7seg
+# -- Compiling architecture logicFunction of int7seg
+# End time: 12:52:52 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/mpmig/ISEL/LSD/lab5/FFD.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:52:52 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/mpmig/ISEL/LSD/lab5/FFD.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity FFD
+# -- Compiling architecture logicFunction of FFD
+# End time: 12:52:52 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/mpmig/ISEL/LSD/lab5/decoderHex.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:52:52 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/mpmig/ISEL/LSD/lab5/decoderHex.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity decoderHex
+# -- Compiling architecture logicFuntion of decoderHex
+# End time: 12:52:52 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/mpmig/ISEL/LSD/lab5/clkDIV.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:52:52 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/mpmig/ISEL/LSD/lab5/clkDIV.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity CLKDIV
+# -- Compiling architecture bhv of CLKDIV
+# End time: 12:52:52 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/mpmig/ISEL/LSD/lab5/reg4bits.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:52:52 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/mpmig/ISEL/LSD/lab5/reg4bits.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity reg4bits
+# -- Compiling architecture reg4bits of reg4bits
+# End time: 12:52:52 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/mpmig/ISEL/LSD/lab5/countup.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:52:52 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/mpmig/ISEL/LSD/lab5/countup.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity countup
+# -- Compiling architecture countup of countup
+# End time: 12:52:52 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/mpmig/ISEL/LSD/lab5/lab5.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:52:52 on Nov 30,2022
+# vcom -reportprogress 300 -93 -work work C:/Users/mpmig/ISEL/LSD/lab5/lab5.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity lab5
+# -- Compiling architecture lab5 of lab5
+# End time: 12:52:52 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vcom -reportprogress 300 -work work C:/Users/mpmig/ISEL/LSD/lab5/LAB5_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:53:01 on Nov 30,2022
+# vcom -reportprogress 300 -work work C:/Users/mpmig/ISEL/LSD/lab5/LAB5_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity lab5_tb
+# -- Compiling architecture lab5_tb_arch of lab5_tb
+# End time: 12:53:01 on Nov 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.lab5_tb
+# vsim work.lab5_tb 
+# Start time: 12:53:07 on Nov 30,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.lab5_tb(lab5_tb_arch)
+# Loading work.lab5(lab5)
+# Loading ieee.numeric_std(body)
+# Loading work.clkdiv(bhv)
+# Loading work.countup(countup)
+# Loading work.adder(adder)
+# Loading work.fulladder(fulladder)
+# Loading work.mux2_1(mux2_1)
+# Loading work.reg4bits(reg4bits)
+# Loading work.ffd(logicfunction)
+# Loading work.decoderhex(logicfuntion)
+# Loading work.int7seg(logicfunction)
+run -all
+add wave -position insertpoint  \
+sim:/lab5_tb/CLK_TB \
+sim:/lab5_tb/PL_TB \
+sim:/lab5_tb/CE_TB \
+sim:/lab5_tb/TC_TB \
+sim:/lab5_tb/CLR_TB \
+sim:/lab5_tb/DATA_IN_TB \
+sim:/lab5_tb/Q_TB \
+sim:/lab5_tb/SEG7_TB \
+sim:/lab5_tb/MCLK_PERIOD \
+sim:/lab5_tb/MCLK_HALF_PERIOD \
+sim:/lab5_tb/CLK_PERIOD
+restart
+run -all
+# End time: 12:59:13 on Nov 30,2022, Elapsed time: 0:06:06
+# Errors: 0, Warnings: 0

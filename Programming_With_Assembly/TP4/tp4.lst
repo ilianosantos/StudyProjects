@@ -1,0 +1,326 @@
+P16 assembler v1.4.0 (Mar  6 2023)	c:\ISEL\Semestre2\AC\26D\TLabs\TP4\tp4.lst	Sat Jun 24 21:03:37 2023
+
+Sections
+Index   Name            Address   Size
+0       startup         0000      000E 14
+1       .text           000E      010A 266
+2       .data           0118      0020 32
+3       .bss            0138      0004 4
+4       .stack          013C      0040 64
+
+Symbols
+Name                    Type      Value       Section
+_start                  LABEL     0004 4      startup
+array                   LABEL     0118 280    .data
+array_addr              LABEL     0042 66     .text
+condition               LABEL     002E 46     .text
+condition_test          LABEL     0028 40     .text
+CPSR_BIT_I              ABSOLUTE  0010 16     startup
+delay_seconds           LABEL     0074 116    .text
+DELAY_TIME              ABSOLUTE  01F4 500    startup
+do_test                 LABEL     0044 68     .text
+if_time_not_over        LABEL     0050 80     .text
+inport_addr             LABEL     00DC 220    .text
+INPORT_ADDRESS          ABSOLUTE  FF80 65408  startup
+inport_read             LABEL     00D6 214    .text
+isr                     LABEL     008A 138    .text
+isr_addr                LABEL     000C 12     startup
+main                    LABEL     000E 14     .text
+main_addr               LABEL     000A 10     startup
+main_loop               LABEL     0024 36     .text
+outport_addr            LABEL     00EE 238    .text
+OUTPORT_ADDRESS         ABSOLUTE  FFC0 65472  startup
+outport_clear_bits      LABEL     00FE 254    .text
+outport_img             LABEL     013A 314    .bss
+outport_img_addr        LABEL     010E 270    .text
+outport_init            LABEL     00DE 222    .text
+OUTPORT_INIT_VAL        ABSOLUTE  00FF 255    startup
+outport_set_bits        LABEL     00F0 240    .text
+outport_write           LABEL     00E8 232    .text
+PTC_ADDR                LABEL     00D4 212    .text
+PTC_ADDRESS             ABSOLUTE  FF78 65400  startup
+PTC_CMD_START           ABSOLUTE  0000 0      startup
+PTC_CMD_STOP            ABSOLUTE  0001 1      startup
+ptc_get_value           LABEL     00CE 206    .text
+ptc_init                LABEL     00AA 170    .text
+ptc_start               LABEL     00A2 162    .text
+ptc_stop                LABEL     00C6 198    .text
+PTC_TC                  ABSOLUTE  0004 4      startup
+PTC_TCR                 ABSOLUTE  0000 0      startup
+PTC_TIR                 ABSOLUTE  0006 6      startup
+PTC_TMR                 ABSOLUTE  0002 2      startup
+read_inport_value       LABEL     0032 50     .text
+RESULT_MASK             ABSOLUTE  00FE 254    startup
+show_result             LABEL     0070 112    .text
+show_result_by_delay_s  LABEL     007E 126    .text
+STACK_SIZE              ABSOLUTE  0040 64     startup
+STIMULUS_MASK           ABSOLUTE  0001 1      startup
+sysclk                  LABEL     0138 312    .bss
+sysclk_addr             LABEL     0116 278    .text
+sysclk_addr_isr         LABEL     00A0 160    .text
+SYSCLK_FREQ             ABSOLUTE  0009 9      startup
+sysclk_get_ticks        LABEL     0110 272    .text
+time_over               LABEL     005E 94     .text
+tos                     LABEL     017C 380    .stack
+tos_addr                LABEL     0008 8      startup
+user_clear              LABEL     0066 102    .text
+
+Code listing
+   1           	; Ficheiro:  tp4.S
+   2           	; Descricao: Programa de suporte a realizacao do 4º trabalho prático.
+   3           	; Autor:     Iliano Santos, Hélio Moura, Romário Dias
+   4           	; Data:      09-06-2023
+   5           	    
+   6          		.equ OUTPORT_INIT_VAL, 0xFF			; Valor inicial para o porto de saída
+   7          	    .equ SYSCLK_FREQ, 0x09				; Intervalo de contagem do circuito pTC
+   8          	    .equ INPORT_ADDRESS, 0xFF80			; Endereco do porto de entrada
+   9          		.equ OUTPORT_ADDRESS, 0xFFC0		; Endereco do porto de saida
+  10          		.equ CPSR_BIT_I, 0b010000			; Mascara para o bit I do registo CPSR
+  11           	
+  12          	    .equ STACK_SIZE, 64					; Tamanho da pilha 
+  13           	
+  14          		.equ PTC_ADDRESS, 0xFF78            ; Endereco do circuito pTC 
+  15          		.equ PTC_TCR, 0						; Deslocamento do registo TCR do pTC
+  16          		.equ PTC_TMR, 2						; Deslocamento do registo TMR do pTC
+  17          		.equ PTC_TC,  4						; Deslocamento do registo TC do pTC
+  18          		.equ PTC_TIR, 6						; Deslocamento do registo TIR do pTC
+  19           	
+  20          		.equ STIMULUS_MASK, 1  				; Mascara para o LED O0(STIMULUS) da placa SDP16 -- 0b00000001
+  21          		.equ RESULT_MASK, 0xFE				; Valor inicial para o resultado -- 0b11111110
+  22           	
+  23          		.equ DELAY_TIME, 500				; Tempo de espera, em milissegundos, até executar uma nova iteração
+  24          		.equ PTC_CMD_START, 0				; Comando para iniciar a contagem no pTC
+  25          		.equ PTC_CMD_STOP, 1				; Comando para parar a contagem no pTC
+  26           	
+  27           	    .section startup
+  28 0000 01 58		b _start
+  29 0002 4F 0C		ldr	pc, isr_addr
+  30           	
+  31           	_start:
+  32 0004 1D 0C		ldr	sp, tos_addr
+  33           	
+  34 0006 1F 0C		ldr	pc, main_addr
+  35           	;-------------------------------------
+  36           	tos_addr:
+  37 0008 7C 01		.word	tos
+  38           	main_addr:
+  39 000A 0E 00		.word	main
+  40           	isr_addr:
+  41 000C 8A 00		.word	isr
+  42           	;-------------------------------------
+  43           	    .text
+  44           	main:
+  45 000E F0 6F		mov r0, #OUTPORT_INIT_VAL
+  46 0010 66 5C		bl outport_init
+  47           		;-------------------------------------------
+  48 0012 61 5C	    bl inport_read						; ler o valor do porto de entrada
+  49 0014 81 F0		asr r1, r0, #1						; deslocar um bit para a direita para detectar carry
+  50 0016 FB 4B		bcs main							; se carry = 1, regressa ao main
+  51           	
+  52 0018 90 60		mov	r0, #SYSCLK_FREQ
+  53 001A 47 5C		bl	ptc_init
+  54 001C 60 B0		mrs	r0, cpsr
+  55 001E 01 61		mov	r1, #CPSR_BIT_I 				; habilita ou desabilita interrupções
+  56 0020 80 C8		orr	r0, r0, r1
+  57 0022 40 B0		msr	cpsr, r0
+  58           	main_loop:
+  59 0024 01 5C		bl condition_test					; executa o teste de medição de tempo de reação
+  60 0026 FE 5B		b main_loop							; fim da iteração do loop
+  61           	;-------------------------------------
+  62           	condition_test:
+  63 0028 0E 24		push lr
+  64 002A 04 24		push r4
+  65 002C 05 24		push r5
+  66           	condition:
+  67 002E F0 6F		mov r0, #OUTPORT_INIT_VAL
+  68 0030 56 5C		bl outport_init
+  69           	read_inport_value:
+  70 0032 51 5C		bl inport_read
+  71 0034 04 EA		lsr r4, r0, #4						; deslocar quatro bits para a direita para obter o índice do array em memória para TIME
+  72 0036 81 E8		lsr r1, r0, #1						; deslocar um bit para a direita para detectar carry (USER)
+  73 0038 FC 4F		bcc read_inport_value				; se carry = 0, regressa ao condition
+  74           	
+  75 003A 35 0C		ldr r5, array_addr					; obter tempo de espera
+  76 003C C4 E0		lsl r4, r4, #1
+  77 003E 54 12		ldr r4, [r5, r4]					; obter o valor do TIME, através do seu índice
+  78 0040 01 58		b do_test
+  79           		;-------------------------------------
+  80           	array_addr:
+  81 0042 18 01		.word array
+  82           	do_test:
+  83 0044 E0 6F		mov r0, #RESULT_MASK
+  84 0046 5B 5C		bl outport_clear_bits				; colocar o valor 0x00 no porto de saída RESULT
+  85 0048 10 60		mov r0, #STIMULUS_MASK
+  86 004A 52 5C		bl outport_set_bits					; colocar o valor 0x01 no porto de saída STIMULUS
+  87 004C 61 5C		bl sysclk_get_ticks
+  88 004E 05 B0		mov	r5, r0							; guarda-se o instante em que iniciou-se o teste
+  89           	if_time_not_over:						; se o tempo não tiver acabado, continua a contar
+  90 0050 42 5C		bl inport_read
+  91 0052 81 E8		lsr r1, r0, #1						; deslocar um bit para a direita para detectar carry (USER)
+  92 0054 EC 4F		bcc condition						; se carry = 0, regressa ao condition
+  93           	
+  94 0056 5C 5C		bl sysclk_get_ticks
+  95 0058 80 8A		sub r0, r0, r5						; intervalo entre o instante atual do temporizador e o instante no momento em que o stimulus foi ativo
+  96 005A 00 BA		cmp r0, r4							; se esse intervalo for menor que o TIME
+  97 005C F9 4B		blo if_time_not_over
+  98           	
+  99           	time_over:
+ 100 005E 10 60		mov r0, #STIMULUS_MASK
+ 101 0060 4E 5C		bl outport_clear_bits				; colocar o valor 0x00 no porto de saída STIMULUS	
+ 102 0062 56 5C		bl sysclk_get_ticks
+ 103 0064 05 B0		mov	r5, r0							; guardar o instante em que o stimulus é desativado
+ 104           	user_clear:
+ 105 0066 37 5C		bl inport_read
+ 106 0068 81 E8		lsr r1, r0, #1						; deslocar um bit para a direita para detectar se não há carry (USER)
+ 107 006A FD 4B		bcs user_clear						; avaliar se o valor do USER mudou para 0
+ 108           	
+ 109 006C 51 5C		bl sysclk_get_ticks
+ 110 006E 80 8A		sub r0, r0, r5
+ 111           	show_result:
+ 112 0070 80 E0		lsl r0, r0, #1						; deslocar um bit para a esquerda para colocar o valor do porto de saída RESULT e deixar o stimulus a zero
+ 113 0072 3A 5C		bl outport_write					; escrita no porto de saída e consequente resultado
+ 114           	delay_seconds:
+ 115 0074 4D 5C		bl sysclk_get_ticks
+ 116 0076 05 B0		mov r5, r0							; criar uma cópia desse tempo para depos utilizar para verificar o delay
+ 117 0078 40 6F	    mov r0, #DELAY_TIME & 0xFF
+ 118 007A 10 70	    movt r0, #(DELAY_TIME >> 8) & 0xFF
+ 119 007C 55 80		add r5, r5, r0						; instante onde user foi desativo a somar com o valor do DELAY TIME
+ 120           	show_result_by_delay_s:					; espera 5 segundos
+ 121 007E 48 5C		bl sysclk_get_ticks
+ 122 0080 80 BA		cmp r0, r5							; verifica-se o valor atual valor corrente do temporizador para saber ultrapassou o delay
+ 123 0082 FD 4B		blo show_result_by_delay_s						
+ 124 0084 05 04		pop r5
+ 125 0086 04 04		pop r4
+ 126 0088 0F 04		pop pc
+ 127           	;-------------------------------------
+ 128           	isr:
+ 129 008A 00 24		push r0
+ 130 008C 01 24		push r1
+ 131 008E 21 0E		ldr r1, PTC_ADDR
+ 132 0090 11 2B		strb r1, [r1, #PTC_TIR]				; escrita para limpar pedido de interrupção
+ 133 0092 60 0C		ldr	r0, sysclk_addr_isr
+ 134 0094 01 00		ldr r1, [r0]
+ 135 0096 91 A0		add	r1, r1, #1
+ 136 0098 01 20		str r1, [r0]
+ 137 009A 01 04		pop	r1
+ 138 009C 00 04		pop	r0
+ 139 009E 20 B0		movs pc, lr
+ 140           	;-------------------------------------
+ 141           	sysclk_addr_isr:
+ 142 00A0 38 01		.word sysclk
+ 143           	;-------------------------------------
+ 144           	ptc_start:
+ 145 00A2 80 0D	    ldr r0, PTC_ADDR
+ 146 00A4 01 60	    mov r1, #PTC_CMD_START
+ 147 00A6 01 28	    strb r1, [ r0, #PTC_TCR ]
+ 148 00A8 0F B7	    mov pc, lr
+ 149           	;-------------------------------------
+ 150           	ptc_init:
+ 151 00AA 0E 24		push lr
+ 152 00AC 00 24		push r0
+ 153 00AE 01 24		push r1
+ 154 00B0 04 24		push r4
+ 155 00B2 04 B0		mov r4, r0
+ 156 00B4 08 5C		bl ptc_stop
+ 157 00B6 E1 0C		ldr	r1, PTC_ADDR
+ 158 00B8 14 29		strb r4, [r1, #PTC_TMR]				; escrita para definir o valor do match register
+ 159 00BA 14 2B		strb r4, [r1, #PTC_TIR]				; escrita para limpar pedido de interrupção
+ 160 00BC F2 5F		bl ptc_start
+ 161 00BE 04 04		pop r4
+ 162 00C0 01 04		pop r1
+ 163 00C2 00 04		pop r0
+ 164 00C4 0F 04		pop pc
+ 165           	;-------------------------------------
+ 166           	ptc_stop:
+ 167 00C6 60 0C		ldr	r0, PTC_ADDR
+ 168 00C8 11 60		mov	r1, #PTC_CMD_STOP
+ 169 00CA 01 28		strb	r1, [r0, #PTC_TCR]
+ 170 00CC 0F B7		mov	pc, lr
+ 171           	;-------------------------------------
+ 172           	ptc_get_value:
+ 173 00CE 21 0C		ldr	r1, PTC_ADDR
+ 174 00D0 10 0A		ldrb r0, [r1, #PTC_TC]
+ 175 00D2 0F B7		mov	pc, lr
+ 176           	;-------------------------------------
+ 177           	PTC_ADDR:
+ 178 00D4 78 FF		.word PTC_ADDRESS
+ 179           	;-------------------------------------
+ 180           	inport_read:
+ 181 00D6 21 0C		ldr	r1, inport_addr
+ 182 00D8 10 08		ldrb r0, [r1]
+ 183 00DA 0F B7		mov	pc, lr
+ 184           	
+ 185           	inport_addr:
+ 186 00DC 80 FF		.word	INPORT_ADDRESS
+ 187           	;-------------------------------------
+ 188           	outport_init:
+ 189 00DE 0E 24		push	lr
+ 190 00E0 61 0D		ldr	r1, outport_img_addr
+ 191 00E2 10 28		strb	r0, [r1]
+ 192 00E4 01 5C		bl	outport_write
+ 193 00E6 0F 04		pop	pc
+ 194           	;-------------------------------------
+ 195           	outport_write:
+ 196 00E8 21 0C		ldr	r1, outport_addr
+ 197 00EA 10 28		strb r0, [r1, #0]
+ 198 00EC 0F B7		mov	pc, lr
+ 199           	;-------------------------------------
+ 200           	outport_addr:
+ 201 00EE C0 FF		.word OUTPORT_ADDRESS
+ 202           	;-------------------------------------
+ 203           	outport_set_bits:
+ 204 00F0 0E 24		push lr
+ 205 00F2 D1 0C		ldr	r1, outport_img_addr
+ 206 00F4 12 08		ldrb r2, [r1, #0]
+ 207 00F6 20 C8		orr	r0, r2, r0
+ 208 00F8 10 28		strb r0, [r1, #0]
+ 209 00FA F6 5F		bl outport_write
+ 210 00FC 0F 04		pop	pc
+ 211           	;-------------------------------------
+ 212           	outport_clear_bits:
+ 213 00FE 0E 24		push lr
+ 214 0100 61 0C		ldr	r1, outport_img_addr
+ 215 0102 12 08		ldrb	r2, [r1, #0]
+ 216 0104 10 B0		mvn	r0, r0
+ 217 0106 20 C0		and	r0, r2, r0
+ 218 0108 10 28		strb	r0, [r1]
+ 219 010A EE 5F		bl	outport_write
+ 220 010C 0F 04		pop	pc
+ 221           	;-------------------------------------
+ 222           	outport_img_addr:
+ 223 010E 3A 01		.word outport_img
+ 224           	sysclk_get_ticks:
+ 225 0110 20 0C		ldr	r0, sysclk_addr
+ 226 0112 00 00		ldr	r0, [r0]
+ 227 0114 0F B7		mov pc, lr
+ 228           	
+ 229           	sysclk_addr:
+ 230 0116 38 01		.word	sysclk
+ 231           	
+ 232           	; Seccao:    data
+ 233           	; Descricao: Guarda as variáveis globais com um valor inicial definido
+ 234           	;
+ 235           		.data
+ 236           	array:
+ 237          		.word 100, 100, 200, 300, 400, 500, 600, 700, 800, 900, 900, 900, 900, 900, 900, 900
+ 237 0118 64 00 64 00 C8 00 2C 01 90 01 F4 01 58 02 BC 02
+ 237 0128 20 03 84 03 84 03 84 03 84 03 84 03 84 03 84 03
+ 238           	
+ 239           	; Seccao:    bss
+ 240           	; Descricao: Guarda as variáveis globais sem valor inicial definido
+ 241           	;
+ 242           		.bss
+ 243           	sysclk:
+ 244 0138 00   		.space	2
+ 244 0139 00
+ 245           	outport_img:
+ 246 013A 00   		.space	1
+ 247 013B 00  		.align
+ 248           	; Seccao:    stack
+ 249           	; Descricao: Implementa a pilha com o tamanho definido pelo símbolo STACK_SIZE
+ 250           	;
+ 251           		.stack
+ 252 013C 00   		.space	STACK_SIZE
+ 252 .... ..
+ 252 017B 00
+ 253           	tos:

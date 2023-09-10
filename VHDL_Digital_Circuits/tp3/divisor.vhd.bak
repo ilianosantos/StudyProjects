@@ -1,0 +1,61 @@
+LIBRARY IEEE;
+use IEEE.std_logic_1164.all;
+
+entity divisor is
+port(
+	RESET : in STD_LOGIC;
+	CLK : in std_logic;
+	Start: in std_logic;
+	Dividendo, Divis : in std_logic_vector(3 downto 0);
+	Rdy : OUT STD_LOGIC;		
+	Quociente, Resto : out std_logic_vector(3 downto 0);
+	HEX0, HEX1, HEX4, HEX5 : out std_logic_vector(7 downto 0)
+);
+end divisor;
+
+
+architecture arq_divisor of divisor is
+
+component caminhoDados is
+port(
+	Dividendo, Divisor : in std_logic_vector(3 downto 0);
+	S, E, R, CE, CLEAR, CLK : in std_logic;
+	HEX0, HEX1,HEX2,HEX3 :out std_logic_vector(7 downto 0);
+	Q, Resto : out std_logic_vector(3 downto 0);
+	GE, Rdy: out std_logic
+);
+end component;
+
+
+component ROM is
+port (MCLK, START, B, RST: in std_logic;
+		Q1, Q0, S, R, CE, CLEAR, RDY: out std_logic
+		);
+end component;
+
+
+begin
+ U_caminhoDados: caminhoDados port map(
+	HEX0 => HEX0,
+	HEX1 => HEX1,
+	HEX2 => HEX4,
+	HEX3 => HEX5,
+	Q => Quociente,
+	Resto => Resto,
+	GE => ,
+	Rdy => 
+ );
+
+  U_ROM: ROM port map(
+	MCLK => CLK,
+	RST => RESET,
+	START => Start,
+	B => ,
+	S => ,
+	R => ,
+	CE => ,
+	CLEAR => ,
+	RDY => Rdy
+ );
+
+end arq_divisor;

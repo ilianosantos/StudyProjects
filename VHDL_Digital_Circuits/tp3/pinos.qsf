@@ -1,0 +1,66 @@
+set_global_assignment -name BOARD "MAX 10 DE10 - Lite"
+set_global_assignment -name DEVICE 10M50DAF484C6GES
+set_global_assignment -name FAMILY "MAX 10"
+
+#Switches com entradas Dividendo, Divis, Start e RESET
+set_location_assignment PIN_C10 -to Dividendo[0]
+set_location_assignment PIN_C11 -to Dividendo[1]
+set_location_assignment PIN_D12 -to Dividendo[2]
+set_location_assignment PIN_C12 -to Dividendo[3]
+set_location_assignment PIN_A12 -to Divis[0]
+set_location_assignment PIN_B12 -to Divis[1]
+set_location_assignment PIN_A13 -to Divis[2]
+set_location_assignment PIN_A14 -to Divis[3]
+set_location_assignment PIN_B14 -to Start
+set_location_assignment PIN_F15 -to RESET
+
+set_location_assignment PIN_P11 -to CLK
+
+#Atribuição das saídas
+set_location_assignment PIN_A8 -to Rdy
+set_location_assignment PIN_A9 -to Quociente[0]
+set_location_assignment PIN_A10 -to Quociente[1]
+set_location_assignment PIN_B10 -to Quociente[2]
+set_location_assignment PIN_D13 -to Quociente[3]
+set_location_assignment PIN_C13 -to Resto[0]
+set_location_assignment PIN_E14 -to Resto[1]
+set_location_assignment PIN_D14 -to Resto[2]
+set_location_assignment PIN_A11 -to Resto[3]
+
+#Atribuição do Resto
+set_location_assignment PIN_C14 -to HEX0[0]
+set_location_assignment PIN_E15 -to HEX0[1]
+set_location_assignment PIN_C15 -to HEX0[2]
+set_location_assignment PIN_C16 -to HEX0[3]
+set_location_assignment PIN_E16 -to HEX0[4]
+set_location_assignment PIN_D17 -to HEX0[5]
+set_location_assignment PIN_C17 -to HEX0[6]
+set_location_assignment PIN_D15 -to HEX0[7]
+
+set_location_assignment PIN_C18 -to HEX1[0]
+set_location_assignment PIN_D18 -to HEX1[1]
+set_location_assignment PIN_E18 -to HEX1[2]
+set_location_assignment PIN_B16 -to HEX1[3]
+set_location_assignment PIN_A17 -to HEX1[4]
+set_location_assignment PIN_A18 -to HEX1[5]
+set_location_assignment PIN_B17 -to HEX1[6]
+set_location_assignment PIN_A16 -to HEX1[7]
+
+#Atribuição do Quociente
+set_location_assignment PIN_F18 -to HEX4[0]
+set_location_assignment PIN_E20 -to HEX4[1]
+set_location_assignment PIN_E19 -to HEX4[2]
+set_location_assignment PIN_J18 -to HEX4[3]
+set_location_assignment PIN_H19 -to HEX4[4]
+set_location_assignment PIN_F19 -to HEX4[5]
+set_location_assignment PIN_F20 -to HEX4[6]
+set_location_assignment PIN_F17 -to HEX4[7]
+
+set_location_assignment PIN_J20 -to HEX5[0]
+set_location_assignment PIN_K20 -to HEX5[1]
+set_location_assignment PIN_L18 -to HEX5[2]
+set_location_assignment PIN_N18 -to HEX5[3]
+set_location_assignment PIN_M20 -to HEX5[4]
+set_location_assignment PIN_N19 -to HEX5[5]
+set_location_assignment PIN_N20 -to HEX5[6]
+set_location_assignment PIN_L19 -to HEX5[7]

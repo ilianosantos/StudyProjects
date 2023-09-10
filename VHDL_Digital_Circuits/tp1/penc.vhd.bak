@@ -1,0 +1,17 @@
+LIBRARY IEEE;
+use IEEE.std_logic_1164.all;
+
+entity PEnc is
+port (
+		I0, I1, I2, I3: std_logic;
+		O : out std_logic_vector(1 downto 0);
+		V : OUT std_logic;
+);
+end logic;
+
+architecture PENC of PEnc is
+begin
+		O0 <= I3 or (I1 and not I2);
+		O1 <= I3 or I2;
+		 V <= 
+end PENC;			

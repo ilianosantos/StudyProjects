@@ -1,0 +1,323 @@
+# Reading pref.tcl
+# do tp3_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/mpmig/Desktop/tp3/divisor.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:18:35 on Jan 09,2023
+# vcom -reportprogress 300 -93 -work work C:/Users/mpmig/Desktop/tp3/divisor.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity divisor
+# -- Compiling architecture arq_divisor of divisor
+# End time: 15:18:35 on Jan 09,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/mpmig/Desktop/tp3/ROM.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:18:35 on Jan 09,2023
+# vcom -reportprogress 300 -93 -work work C:/Users/mpmig/Desktop/tp3/ROM.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ROM
+# -- Compiling architecture arq_ROM of ROM
+# End time: 15:18:36 on Jan 09,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/mpmig/Desktop/lab5/reg4bits.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:18:36 on Jan 09,2023
+# vcom -reportprogress 300 -93 -work work C:/Users/mpmig/Desktop/lab5/reg4bits.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity reg4bits
+# -- Compiling architecture reg4bits of reg4bits
+# End time: 15:18:36 on Jan 09,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/mpmig/Desktop/lab5/mux2_1.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:18:36 on Jan 09,2023
+# vcom -reportprogress 300 -93 -work work C:/Users/mpmig/Desktop/lab5/mux2_1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux2_1
+# -- Compiling architecture mux2_1 of mux2_1
+# End time: 15:18:36 on Jan 09,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/mpmig/Desktop/lab5/FFD.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:18:36 on Jan 09,2023
+# vcom -reportprogress 300 -93 -work work C:/Users/mpmig/Desktop/lab5/FFD.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity FFD
+# -- Compiling architecture logicFunction of FFD
+# End time: 15:18:36 on Jan 09,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/mpmig/Desktop/lab5/countup.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:18:36 on Jan 09,2023
+# vcom -reportprogress 300 -93 -work work C:/Users/mpmig/Desktop/lab5/countup.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity countup
+# -- Compiling architecture countup of countup
+# End time: 15:18:36 on Jan 09,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/mpmig/Desktop/tp3/int7seg.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:18:37 on Jan 09,2023
+# vcom -reportprogress 300 -93 -work work C:/Users/mpmig/Desktop/tp3/int7seg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity int7seg
+# -- Compiling architecture logicFunction of int7seg
+# End time: 15:18:37 on Jan 09,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/mpmig/Desktop/tp3/bin2dec_int.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:18:37 on Jan 09,2023
+# vcom -reportprogress 300 -93 -work work C:/Users/mpmig/Desktop/tp3/bin2dec_int.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity bin2dec_int
+# -- Compiling architecture Behavioral of bin2dec_int
+# End time: 15:18:37 on Jan 09,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/mpmig/Desktop/tp3/decoderHex.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:18:37 on Jan 09,2023
+# vcom -reportprogress 300 -93 -work work C:/Users/mpmig/Desktop/tp3/decoderHex.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity decoderHex
+# -- Compiling architecture logicFuntion of decoderHex
+# End time: 15:18:37 on Jan 09,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/mpmig/Desktop/tp3/CaminhoDados.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:18:38 on Jan 09,2023
+# vcom -reportprogress 300 -93 -work work C:/Users/mpmig/Desktop/tp3/CaminhoDados.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity caminhoDados
+# -- Compiling architecture caminhoDados of caminhoDados
+# End time: 15:18:38 on Jan 09,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/mpmig/Desktop/lab4/sumsub.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:18:38 on Jan 09,2023
+# vcom -reportprogress 300 -93 -work work C:/Users/mpmig/Desktop/lab4/sumsub.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity sumsub
+# -- Compiling architecture sumsub of sumsub
+# End time: 15:18:38 on Jan 09,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/mpmig/Desktop/lab4/fulladder.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:18:38 on Jan 09,2023
+# vcom -reportprogress 300 -93 -work work C:/Users/mpmig/Desktop/lab4/fulladder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity fulladder
+# -- Compiling architecture fulladder of fulladder
+# End time: 15:18:38 on Jan 09,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/mpmig/Desktop/lab4/adder.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:18:38 on Jan 09,2023
+# vcom -reportprogress 300 -93 -work work C:/Users/mpmig/Desktop/lab4/adder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity adder
+# -- Compiling architecture adder of adder
+# End time: 15:18:38 on Jan 09,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vcom -reportprogress 300 -work work C:/Users/mpmig/Desktop/tp3/divisor_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:18:47 on Jan 09,2023
+# vcom -reportprogress 300 -work work C:/Users/mpmig/Desktop/tp3/divisor_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity divisor_tb
+# -- Compiling architecture behavior of divisor_tb
+# End time: 15:18:47 on Jan 09,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work C:/Users/mpmig/Desktop/tp3/divisor_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 15:18:48 on Jan 09,2023
+# vcom -reportprogress 300 -work work C:/Users/mpmig/Desktop/tp3/divisor_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity divisor_tb
+# -- Compiling architecture behavior of divisor_tb
+# End time: 15:18:48 on Jan 09,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.divisor_tb
+# vsim work.divisor_tb 
+# Start time: 15:18:52 on Jan 09,2023
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.divisor_tb(behavior)
+# Loading work.divisor(arq_divisor)
+# Loading ieee.numeric_std(body)
+# Loading work.rom(arq_rom)
+# Loading work.ffd(logicfunction)
+# Loading work.caminhodados(caminhodados)
+# Loading work.countup(countup)
+# Loading work.adder(adder)
+# Loading work.fulladder(fulladder)
+# Loading work.mux2_1(mux2_1)
+# Loading work.reg4bits(reg4bits)
+# Loading work.sumsub(sumsub)
+# Loading work.decoderhex(logicfuntion)
+# Loading work.bin2dec_int(behavioral)
+# Loading work.int7seg(logicfunction)
+add wave -position insertpoint  \
+sim:/divisor_tb/RESET \
+sim:/divisor_tb/CLK \
+sim:/divisor_tb/Start \
+sim:/divisor_tb/Dividendo \
+sim:/divisor_tb/Divis \
+sim:/divisor_tb/Rdy \
+sim:/divisor_tb/Quociente \
+sim:/divisor_tb/Resto
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ub
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ub
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ub
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ub
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ub
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ub
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ub
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ub
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ua
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ua
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ua
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ua
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ua
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ua
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ua
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ua
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /divisor_tb/uut/U_ROM
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ub
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ub
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ub
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ua
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ua
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ua
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /divisor_tb/uut/U_ROM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5 ns  Iteration: 2  Instance: /divisor_tb/uut/U_ROM
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ub
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ub
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ub
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ub
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ub
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ub
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ub
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ub
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ua
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ua
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ua
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ua
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ua
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ua
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ua
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ua
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /divisor_tb/uut/U_ROM
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ub
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ub
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ub
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ua
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ua
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /divisor_tb/uut/U_caminhoDados/DecHex0/Ua
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /divisor_tb/uut/U_ROM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5 ns  Iteration: 2  Instance: /divisor_tb/uut/U_ROM
+# End time: 15:22:08 on Jan 09,2023, Elapsed time: 0:03:16
+# Errors: 0, Warnings: 25

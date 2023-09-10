@@ -1,0 +1,127 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/mpmig/Desktop/ISEL/LSD/tp1/simulation/modelsim
+Emux2
+Z1 w1666786323
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8C:/Users/mpmig/Desktop/ISEL/LSD/tp1/mux.vhd
+Z5 FC:/Users/mpmig/Desktop/ISEL/LSD/tp1/mux.vhd
+l0
+L4
+VOIFSfUPdoFmS1U0hEhTY02
+!s100 8_NlXa8XHcfkn8UC`n[3Z1
+Z6 OV;C;10.5b;63
+31
+Z7 !s110 1667243379
+!i10b 1
+Z8 !s108 1667243379.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/mpmig/Desktop/ISEL/LSD/tp1/mux.vhd|
+Z10 !s107 C:/Users/mpmig/Desktop/ISEL/LSD/tp1/mux.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Amux
+R2
+R3
+DEx4 work 4 mux2 0 22 OIFSfUPdoFmS1U0hEhTY02
+l13
+L12
+V52DI@1JC8NdM6i;J4497X2
+!s100 0^<Pn_;:=HHSn`0^_zC`]1
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Epenc
+Z13 w1667242709
+R2
+R3
+R0
+Z14 8C:/Users/mpmig/Desktop/ISEL/LSD/tp1/penc.vhd
+Z15 FC:/Users/mpmig/Desktop/ISEL/LSD/tp1/penc.vhd
+l0
+L4
+VMH8zNf879^TYL`clmGY^P0
+!s100 100PElJ^L[2]7j]daI6X[1
+R6
+31
+R7
+!i10b 1
+R8
+Z16 !s90 -reportprogress|300|-93|-work|work|C:/Users/mpmig/Desktop/ISEL/LSD/tp1/penc.vhd|
+Z17 !s107 C:/Users/mpmig/Desktop/ISEL/LSD/tp1/penc.vhd|
+!i113 1
+R11
+R12
+Apenc
+R2
+R3
+DEx4 work 4 penc 0 22 MH8zNf879^TYL`clmGY^P0
+l13
+L12
+VV=C>=nEENO[Qzg24n<gnz1
+!s100 o9=Z6GcbknoKn047bHFoL1
+R6
+31
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12
+Epenc8_3
+Z18 w1666788800
+R2
+R3
+R0
+Z19 8C:/Users/mpmig/Desktop/ISEL/LSD/tp1/penc8_3.vhd
+Z20 FC:/Users/mpmig/Desktop/ISEL/LSD/tp1/penc8_3.vhd
+l0
+L4
+VUDNB585CQFa^Qd7okIViS3
+!s100 I6I3QgQRMGEdHm@kn07^L2
+R6
+31
+R7
+!i10b 1
+R8
+Z21 !s90 -reportprogress|300|-93|-work|work|C:/Users/mpmig/Desktop/ISEL/LSD/tp1/penc8_3.vhd|
+Z22 !s107 C:/Users/mpmig/Desktop/ISEL/LSD/tp1/penc8_3.vhd|
+!i113 1
+R11
+R12
+Atlab1
+R2
+R3
+DEx4 work 7 penc8_3 0 22 UDNB585CQFa^Qd7okIViS3
+l34
+L13
+VDWIK5`jbF7:mfX`AlEnR11
+!s100 fla9<:GZMcdc_gkm0DLN01
+R6
+31
+R7
+!i10b 1
+R8
+R21
+R22
+!i113 1
+R11
+R12

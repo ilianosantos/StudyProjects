@@ -1,0 +1,306 @@
+P16 assembler v1.4.0 (Mar  6 2023)	c:\ISEL\Semestre2\AC\26D\TLabs\TP1\main.lst	Wed Jul 12 21:09:55 2023
+
+Sections
+Index   Name            Address   Size
+0       startup         0000      0012 18
+1       .text           0012      0100 256
+2       .data           0112      0015 21
+3       .bss            0128      00FF 255
+4       .stack          0228      0040 64
+
+Symbols
+Name                    Type      Value       Section
+char2nat                LABEL     00D2 210    .text
+char2nat_return         LABEL     010A 266    .text
+else_if                 LABEL     00F2 242    .text
+else_if_condition       LABEL     00EA 234    .text
+error                   LABEL     0128 296    .bss
+error_addr              LABEL     0072 114    .text
+ERROR_SIZE              ABSOLUTE  00FF 255    startup
+if                      LABEL     00E2 226    .text
+if2_2                   LABEL     0102 258    .text
+if_2                    LABEL     00FA 250    .text
+line#15                 LABEL     0002 2      startup
+line#21                 LABEL     000C 12     startup
+main                    LABEL     0012 18     .text
+main_addr               LABEL     0010 16     startup
+main_return             LABEL     0064 100    .text
+multiply_while          LABEL     00C4 196    .text
+NAN                     ABSOLUTE  FFFF 65535  startup
+number                  LABEL     00D6 214    .text
+number_NAN              LABEL     0106 262    .text
+stack_bottom            LABEL     0228 552    .stack
+STACK_SIZE              ABSOLUTE  0040 64     startup
+start                   LABEL     0004 4      startup
+str2nat                 LABEL     0074 116    .text
+str2nat_add             LABEL     00B2 178    .text
+str2nat_else            LABEL     00AA 170    .text
+str2nat_if              LABEL     009C 156    .text
+str2nat_loop            LABEL     008A 138    .text
+str2nat_return          LABEL     00B6 182    .text
+test_1                  LABEL     001C 28     .text
+test_2                  LABEL     0034 52     .text
+test_3                  LABEL     004C 76     .text
+tos                     LABEL     0268 616    .stack
+tos_addr                LABEL     000E 14     startup
+tst_results             LABEL     0112 274    .data
+tst_results_addr        LABEL     0070 112    .text
+tst_str0                LABEL     0118 280    .data
+tst_str0_addr           LABEL     006A 106    .text
+tst_str1                LABEL     011E 286    .data
+tst_str1_addr           LABEL     006C 108    .text
+tst_str2                LABEL     0122 290    .data
+tst_str2_addr           LABEL     006E 110    .text
+while_end               LABEL     00CE 206    .text
+
+Code listing
+   1           	; -----------------------------------------------------------------------------
+   2           	; Ficheiro:   main.S
+   3           	; Descricao:  Codigo do 1º trabalho prático de AC.
+   4           	; Autor:      Romário Dias, Iliano Santos
+   5           	; Disciplina: Arquitetura de Computadores
+   6           	; Turma:      26 D
+   7           	; Data:       27-03-2023
+   8           	; -----------------------------------------------------------------------------
+   9          		.equ ERROR_SIZE, 0xFF
+  10           		;2. alínea b) Uma definação para NAN é a seguinte:
+  11          		.equ NAN, 65535 ; alternativamente .equ NAN, 0xFFFF 
+  12          		.equ STACK_SIZE, 64
+  13           		.section startup
+  14 0000 01 58		b start
+  15 0002 FF 5B		b .
+  16           	start:
+  17 0004 4D 0C		ldr sp, tos_addr ;top of stack(tos)
+  18 0006 80 B7		mov r0, pc
+  19 0008 0E A2		add lr, r0, #4
+  20 000A 2F 0C		ldr pc, main_addr
+  21 000C FF 5B		b .
+  22           	
+  23           	tos_addr:
+  24 000E 68 02		.word tos
+  25           	main_addr:
+  26 0010 12 00		.word main
+  27           	;2ºsegmento
+  28           		.text
+  29           	main:
+  30 0012 0E 24		push lr
+  31 0014 04 24	    push r4 ;r4 = error
+  32 0016 04 60		mov r4, #0
+  33 0018 C1 0E		ldr r1, error_addr
+  34 001A 14 20	    str r4, [r1]
+  35           	test_1:
+  36 001C 60 0E		ldr r0, tst_str0_addr
+  37 001E 00 00	    ldr r0, [r0]
+  38 0020 21 60		mov r1, #2
+  39 0022 28 5C		bl str2nat
+  40 0024 51 0E		ldr r1, tst_results_addr
+  41 0026 11 00		ldr r1, [r1, #0]
+  42 0028 80 B8		cmp r0, r1
+  43 002A 04 40		beq test_2
+  44 002C 12 60		mov r2, #1
+  45 002E 44 C9		orr r4, r4, r2
+  46 0030 01 0E	    ldr r1, error_addr
+  47 0032 14 20	    str r4, [r1]
+  48           	test_2:
+  49 0034 B0 0D		ldr r0, tst_str1_addr
+  50 0036 00 00	    ldr r0, [r0]
+  51 0038 81 60		mov r1, #8
+  52 003A 1C 5C		bl str2nat
+  53 003C 91 0D		ldr r1, tst_results_addr
+  54 003E 91 00		ldr r1, [r1, #2]
+  55 0040 80 B8		cmp r0, r1
+  56 0042 04 40		beq test_3
+  57 0044 22 60		mov r2, #2
+  58 0046 44 C9		orr r4, r4, r2
+  59 0048 41 0D	    ldr r1, error_addr
+  60 004A 14 20	    str r4, [r1]
+  61           	test_3:
+  62 004C 00 0D		ldr r0, tst_str2_addr
+  63 004E 00 00	    ldr r0, [r0]
+  64 0050 01 61		mov r1, #16
+  65 0052 10 5C		bl str2nat
+  66 0054 D1 0C		ldr r1, tst_results_addr
+  67 0056 11 01		ldr r1, [r1, #4]
+  68 0058 80 B8		cmp r0, r1
+  69 005A 04 40		beq main_return
+  70 005C 42 60		mov r2, #4
+  71 005E 44 C9		orr r4, r4, r2
+  72 0060 81 0C		ldr r1, error_addr
+  73 0062 14 20	    str r4, [r1]
+  74           	main_return:
+  75 0064 00 B2	    mov r0, r4
+  76 0066 04 04	    pop r4
+  77 0068 0F 04		pop pc
+  78           	
+  79           	tst_str0_addr:
+  80 006A 18 01		.word tst_str0
+  81           	tst_str1_addr:
+  82 006C 1E 01		.word tst_str1
+  83           	tst_str2_addr:
+  84 006E 22 01		.word tst_str2
+  85           	tst_results_addr:
+  86 0070 12 01		.word tst_results
+  87           	error_addr:
+  88 0072 28 01		.word error
+  89           	;------------------------------
+  90           	; r0/r4 = numeral [0]
+  91           	; r1/r5 = radix 
+  92           	; r2 = number
+  93           	; r3 = error
+  94           	; r6 = idx
+  95           	; r7 = tmp
+  96           	
+  97           	str2nat:
+  98 0074 0E 24	    push lr
+  99 0076 04 24	    push r4
+ 100 0078 05 24	    push r5
+ 101 007A 06 24	    push r6
+ 102 007C 07 24	    push r7
+ 103 007E 08 24	    push r8
+ 104 0080 04 B0	    mov r4, r0
+ 105 0082 85 B0	    mov r5, r1
+ 106 0084 02 60	    mov r2, #0
+ 107 0086 03 60	    mov r3, #0
+ 108 0088 06 60	    mov r6, #0
+ 109           	str2nat_loop:
+ 110 008A 08 60	    mov r8, #0
+ 111 008C 30 BC	    cmp r3, r8
+ 112 008E 13 44	    bne str2nat_return
+ 113 0090 08 60	    mov r8, #'\0'
+ 114 0092 40 1B	    ldrb r0, [r4, r6] 
+ 115 0094 00 BC	    cmp r0, r8
+ 116 0096 0F 40	    beq str2nat_return
+ 117 0098 1C 5C	    bl char2nat
+ 118 009A 07 B0	    mov r7, r0
+ 119           	str2nat_if:
+ 120 009C F8 6F	    mov r8, #NAN & 0xFF
+ 121 009E F8 7F	    movt r8, #(NAN >> 8) & 0xFF
+ 122 00A0 70 BC	    cmp r7, r8 
+ 123 00A2 03 44	    bne str2nat_else
+ 124 00A4 02 B4	    mov r2, r8
+ 125 00A6 13 60	    mov r3, #1
+ 126 00A8 04 58	    b str2nat_add
+ 127           	str2nat_else:
+ 128 00AA 08 60	    mov r8, #0
+ 129 00AC 0B 5C	    bl multiply_while
+ 130 00AE 02 84	    add r2, r0, r8 ; r0 retorno da rotina multiply
+ 131 00B0 00 58	    b str2nat_add
+ 132           	str2nat_add:
+ 133 00B2 E6 A0	    add r6, r6, #1
+ 134 00B4 EA 5B	    b str2nat_loop
+ 135           	str2nat_return:
+ 136 00B6 82 B3	    mov r2, r7
+ 137 00B8 08 04	    pop r8
+ 138 00BA 07 04	    pop r7
+ 139 00BC 06 04	    pop r6
+ 140 00BE 05 04	    pop r5
+ 141 00C0 04 04	    pop r4
+ 142 00C2 0F 04	    pop pc
+ 143           	multiply_while:
+ 144 00C4 30 BC	    cmp r3, r8 
+ 145 00C6 03 4C	    bhs while_end
+ 146 00C8 A0 80	    add r0, r2, r1
+ 147 00CA 91 A8	    sub r1, r1, #1
+ 148 00CC FB 5B	    b multiply_while
+ 149           	while_end:
+ 150 00CE 00 B1	    mov r0, r2
+ 151 00D0 0F B7	    mov pc, lr
+ 152           	;------------------------------
+ 153           	; r0 = char symbol 
+ 154           	; r1 = uint16_t radix
+ 155           	; r2 = NAN
+ 156           	; r4, r5 = temp
+ 157           	char2nat:
+ 158 00D2 04 24	    push r4
+ 159 00D4 05 24	    push r5
+ 160           	number:
+ 161 00D6 F2 6F	    mov r2, #NAN & 0xFF
+ 162 00D8 F2 7F	    movt r2, #(NAN >> 8) & 0xFF
+ 163 00DA 04 63	    mov r4, #'0'
+ 164 00DC 95 63	    mov r5, #'9'
+ 165 00DE 00 BA	    cmp r0, r4
+ 166 00E0 04 48	    blo else_if_condition
+ 167           	if:
+ 168 00E2 50 B8	    cmp r5, r0
+ 169 00E4 02 48	    blo else_if_condition
+ 170 00E6 02 8A	    sub r2, r0, r4 
+ 171 00E8 08 58	    b   if_2
+ 172           	else_if_condition:
+ 173 00EA 14 64	    mov r4, #'A'
+ 174 00EC 65 64	    mov r5, #'F'
+ 175 00EE 00 BA	    cmp r0, r4
+ 176 00F0 04 48	    blo if_2
+ 177           	else_if:
+ 178 00F2 50 B8	    cmp r5, r0
+ 179 00F4 02 48	    blo if_2
+ 180 00F6 00 8A	    sub r0, r0, r4
+ 181 00F8 02 A5	    add r2, r0, #10 
+ 182           	if_2:
+ 183 00FA 04 61	    mov r4, #16
+ 184 00FC C0 B8	    cmp r4, r1
+ 185 00FE 01 4C	    bhs if2_2
+ 186 0100 02 58	    b number_NAN
+ 187           	if2_2:
+ 188 0102 A0 B8	    cmp r2, r1
+ 189 0104 02 48	    blo char2nat_return
+ 190           	number_NAN:
+ 191 0106 F2 6F	    mov r2, #NAN & 0xFF
+ 192 0108 F2 7F	    movt r2, #(NAN >> 8) & 0xFF
+ 193           	char2nat_return:
+ 194 010A 00 B1	    mov r0, r2
+ 195 010C 05 04	    pop r5
+ 196 010E 04 04	    pop r4
+ 197 0110 0F B7	    mov pc, lr
+ 198           	
+ 199           	;3ºsegmento
+ 200           		.data
+ 201           	tst_results:
+ 202          		.word 11, 457, 39439
+ 202 0112 0B 00 C9 01 0F 9A
+ 203           	tst_str0:
+ 204          		.asciz "01011"
+ 204 0118 30 31 30 31 31 00
+ 205           	tst_str1:
+ 206          		.asciz "709"
+ 206 011E 37 30 39 00
+ 207           	tst_str2:
+ 208          		.asciz "9A0F"
+ 208 0122 39 41 30 46 00
+ 209           	;4ºsegmento
+ 210           		.bss
+ 211           	error:
+ 212 0128 00   		.space ERROR_SIZE 
+ 212 .... ..
+ 212 0226 00
+ 213           	;5ºsegmento
+ 214           		.stack
+ 215           	stack_bottom:
+ 216 0228 00   	    .space STACK_SIZE
+ 216 .... ..
+ 216 0267 00
+ 217           	tos:
+ 218           	    
+ 219           	
+ 220           	
+ 221           	/**
+ 222           		Resposta às perguntas de enunciado do 1º trabalho prático
+ 223           		1. alínea a)
+ 224           	O programa que implementa esta rotina multiply executa 9 instruções.
+ 225           	Considerando que estamos atrabalhar no âmbito de uma arquitetura de 16
+ 226           	bits, que é o caso do processador P16, sabendo que cada instrução ocupa
+ 227           	16 bits de memória, isto é, 2 bytes. Portanto, concluímos que esta
+ 228           	implementação ocupa 18 bytes, pois 9 x 2 = 18 .
+ 229           		1. alínea b)
+ 230           	Na nossa opinião, esta afirmação é falsa, pois é preferível que usemos o 
+ 231           	registo r2, ao invés do r4, porque precisamos armazenar o conteúdo
+ 232           	o registo r4 implica acesso à memória, o que tornaria o programa 
+ 233           	mais lento. Utilizando o registo r2, e sabendo que precisamos 
+ 234           	desse valor, não é necessário fazer push para o stack, tornando o
+ 235           	programa mais eficiente.
+ 236           		2. alínea a)
+ 237           	O valor da constante NAN é 65535 (FFFF na base 16), pois é o maior valor
+ 238           	representável a 16 bits, no domínio dos números inteiros relativos.
+ 239           		2. alínea b)
+ 240           	Para a constante NAN, é necessário reservar 16 bits na memória, 
+ 241           	porque a constante é um inteiro sem sinal codificado a 16 bits
+ 242           	*/

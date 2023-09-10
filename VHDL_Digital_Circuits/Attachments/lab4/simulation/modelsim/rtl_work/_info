@@ -1,0 +1,205 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/mpmig/Desktop/ISEL/LSD/lab4/simulation/modelsim
+Eadder
+Z1 w1667645202
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8C:/Users/mpmig/Desktop/ISEL/LSD/lab4/adder.vhd
+Z5 FC:/Users/mpmig/Desktop/ISEL/LSD/lab4/adder.vhd
+l0
+L4
+VgHh7;0;1YEQkI24bI8ohR0
+!s100 cj;Xi?>HmBUF<_jTQ_OfM1
+Z6 OV;C;10.5b;63
+31
+Z7 !s110 1669219867
+!i10b 1
+Z8 !s108 1669219867.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/mpmig/Desktop/ISEL/LSD/lab4/adder.vhd|
+Z10 !s107 C:/Users/mpmig/Desktop/ISEL/LSD/lab4/adder.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Aadder
+R2
+R3
+DEx4 work 5 adder 0 22 gHh7;0;1YEQkI24bI8ohR0
+l27
+L14
+V_>:Bg8O^jZ:HX6eMB0j_a1
+!s100 FD0:9lX9e3OaRg3T1jzcV0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Eau
+Z13 w1669219838
+R2
+R3
+R0
+Z14 8C:/Users/mpmig/Desktop/ISEL/LSD/lab4/au.vhd
+Z15 FC:/Users/mpmig/Desktop/ISEL/LSD/lab4/au.vhd
+l0
+L4
+VX0dlahoHG_lJ3BFFVD=a41
+!s100 02Q:cP7[mU@gMo0]3>J@g2
+R6
+31
+R7
+!i10b 1
+R8
+Z16 !s90 -reportprogress|300|-93|-work|work|C:/Users/mpmig/Desktop/ISEL/LSD/lab4/au.vhd|
+Z17 !s107 C:/Users/mpmig/Desktop/ISEL/LSD/lab4/au.vhd|
+!i113 1
+R11
+R12
+Aau
+R2
+R3
+DEx4 work 2 au 0 22 X0dlahoHG_lJ3BFFVD=a41
+l44
+L14
+Vgd;5GP`z^Jl^mi^0nOJJW1
+!s100 aKI@a8`>KdYT1<ko9?DKl2
+R6
+31
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12
+Eflags
+Z18 w1667670565
+R2
+R3
+R0
+Z19 8C:/Users/mpmig/Desktop/ISEL/LSD/lab4/flags.vhd
+Z20 FC:/Users/mpmig/Desktop/ISEL/LSD/lab4/flags.vhd
+l0
+L4
+VILnIa;R=4@0lEbfj[U8mJ0
+!s100 TGOol<zmRAmHh=C?F>^`A1
+R6
+31
+R7
+!i10b 1
+R8
+Z21 !s90 -reportprogress|300|-93|-work|work|C:/Users/mpmig/Desktop/ISEL/LSD/lab4/flags.vhd|
+Z22 !s107 C:/Users/mpmig/Desktop/ISEL/LSD/lab4/flags.vhd|
+!i113 1
+R11
+R12
+Aflags
+R2
+R3
+DEx4 work 5 flags 0 22 ILnIa;R=4@0lEbfj[U8mJ0
+l16
+L15
+VIUiZFKUnV2hiG7XaQDMTW0
+!s100 mN?AZ<^BdHa6FGZ0F?eN63
+R6
+31
+R7
+!i10b 1
+R8
+R21
+R22
+!i113 1
+R11
+R12
+Efulladder
+Z23 w1667561843
+R2
+R3
+R0
+Z24 8C:/Users/mpmig/Desktop/ISEL/LSD/lab4/fulladder.vhd
+Z25 FC:/Users/mpmig/Desktop/ISEL/LSD/lab4/fulladder.vhd
+l0
+L4
+V4e`Yl4?U0H32mBnJKh04N2
+!s100 cjm=R?ec_5j4<6ndAYbUC1
+R6
+31
+R7
+!i10b 1
+R8
+Z26 !s90 -reportprogress|300|-93|-work|work|C:/Users/mpmig/Desktop/ISEL/LSD/lab4/fulladder.vhd|
+Z27 !s107 C:/Users/mpmig/Desktop/ISEL/LSD/lab4/fulladder.vhd|
+!i113 1
+R11
+R12
+Afulladder
+R2
+R3
+DEx4 work 9 fulladder 0 22 4e`Yl4?U0H32mBnJKh04N2
+l15
+L14
+Vf@R`Ek[Q8X9bgi>GYk<]^0
+!s100 eeh<1WnEGTEn9`X4DdXHf3
+R6
+31
+R7
+!i10b 1
+R8
+R26
+R27
+!i113 1
+R11
+R12
+Esumsub
+Z28 w1669219725
+R2
+R3
+R0
+Z29 8C:/Users/mpmig/Desktop/ISEL/LSD/lab4/sumsub.vhd
+Z30 FC:/Users/mpmig/Desktop/ISEL/LSD/lab4/sumsub.vhd
+l0
+L4
+VAd@AInOen`39KIk2n856;0
+!s100 n3JYS18H4VZQc:0cZc9SD0
+R6
+31
+R7
+!i10b 1
+R8
+Z31 !s90 -reportprogress|300|-93|-work|work|C:/Users/mpmig/Desktop/ISEL/LSD/lab4/sumsub.vhd|
+Z32 !s107 C:/Users/mpmig/Desktop/ISEL/LSD/lab4/sumsub.vhd|
+!i113 1
+R11
+R12
+Asumsub
+R2
+R3
+DEx4 work 6 sumsub 0 22 Ad@AInOen`39KIk2n856;0
+l30
+L16
+VIN_f?l_LlF_z=fe]Om^;n1
+!s100 ==dS8]n;ZZRGjaAE3lIHn2
+R6
+31
+R7
+!i10b 1
+R8
+R31
+R32
+!i113 1
+R11
+R12

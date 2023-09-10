@@ -1,0 +1,60 @@
+P16 assembler v1.4.0 (Mar  6 2023)	c:\ISEL\Semestre2\AC\26D\TLabs\TP1\char2nat.lst	Fri Mar 24 20:37:11 2023
+
+Sections
+Index   Name            Address   Size
+0       .text           0000      003C 60
+
+Symbols
+Name                    Type      Value       Section
+char2nat                LABEL     0000 0      .text
+char2nat_return         LABEL     0036 54     .text
+else_if                 LABEL     001E 30     .text
+else_if_condition       LABEL     0016 22     .text
+if                      LABEL     000E 14     .text
+if2_2                   LABEL     002E 46     .text
+if_2                    LABEL     0026 38     .text
+number_NAN              LABEL     0032 50     .text
+
+Code listing
+   1           	; r0 = char symbol 
+   2           	; r1 = uint16_t radix
+   3           	; r2 = NAN
+   4           	; r3, r4 = temp
+   5           	char2nat:
+   6 0000 04 24	    push r4
+   7 0002 F2 6F	    mov r2, #255 ;mov r2, #0xFF
+   8 0004 F2 7F	    movt r2, #255 ;movt r2, #0xFF
+   9 0006 03 63	    mov r3, #'0'
+  10 0008 94 63	    mov r4, #'9'
+  11 000A 80 B9	    cmp r0, r3
+  12 000C 04 48	    blo else_if_condition
+  13           	if:
+  14 000E 40 B8	    cmp r4, r0
+  15 0010 02 48	    blo else_if_condition
+  16 0012 82 89	    sub r2, r0, r3 ;retorno em r0
+  17 0014 08 58	    b   if_2
+  18           	else_if_condition:
+  19 0016 13 64	    mov r3, #'A'
+  20 0018 64 64	    mov r4, #'F'
+  21 001A 80 B9	    cmp r0, r3
+  22 001C 04 48	    blo if_2
+  23           	else_if:
+  24 001E 40 B8	    cmp r4, r0
+  25 0020 02 48	    blo if_2
+  26 0022 80 89	    sub r0, r0, r3
+  27 0024 02 A5	    add r2, r0, #10 ;retorno em r0
+  28           	if_2:
+  29 0026 03 61	    mov r3, #16
+  30 0028 B0 B8	    cmp r3, r1
+  31 002A 01 4C	    bhs if2_2
+  32 002C 02 58	    b number_NAN
+  33           	if2_2:
+  34 002E A0 B8	    cmp r2, r1
+  35 0030 02 48	    blo char2nat_return
+  36           	number_NAN:
+  37 0032 F2 6F	    mov r2, #255 ;mov r2, #0xFF
+  38 0034 F2 7F	    movt r2, #255 ;movt r2, #0xFF
+  39           	char2nat_return:
+  40 0036 00 B1	    mov r0, r2
+  41 0038 04 04	    pop r4
+  42 003A 0F 04	    pop pc

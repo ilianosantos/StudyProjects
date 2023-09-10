@@ -1,0 +1,119 @@
+|au
+A[0] => sumsub:sumsub0.A[0]
+A[1] => sumsub:sumsub0.A[1]
+A[2] => sumsub:sumsub0.A[2]
+A[3] => sumsub:sumsub0.A[3]
+A[3] => flags:flags0.A3
+B[0] => sumsub:sumsub0.B[0]
+B[1] => sumsub:sumsub0.B[1]
+B[2] => sumsub:sumsub0.B[2]
+B[3] => sumsub:sumsub0.B[3]
+B[3] => flags:flags0.B3
+CBi => sumsub:sumsub0.CBi
+OPau => sumsub:sumsub0.OPau
+R[0] <= sumsub:sumsub0.S[0]
+R[1] <= sumsub:sumsub0.S[1]
+R[2] <= sumsub:sumsub0.S[2]
+R[3] <= sumsub:sumsub0.S[3]
+OV <= flags:flags0.OVo
+CBo <= flags:flags0.CBo
+Bau <= sumsub:sumsub0.B3xor
+
+
+|au|sumsub:sumsub0
+A[0] => adder:adder0.A[0]
+A[1] => adder:adder0.A[1]
+A[2] => adder:adder0.A[2]
+A[3] => adder:adder0.A[3]
+B[0] => term[0].IN0
+B[1] => term[1].IN0
+B[2] => term[2].IN0
+B[3] => term[3].IN0
+CBi => C0.IN0
+OPau => term[0].IN1
+OPau => term[1].IN1
+OPau => term[2].IN1
+OPau => term[3].IN1
+OPau => C0.IN1
+OPau => term6.IN1
+iCBo <= term6.DB_MAX_OUTPUT_PORT_TYPE
+S[0] <= adder:adder0.S[0]
+S[1] <= adder:adder0.S[1]
+S[2] <= adder:adder0.S[2]
+S[3] <= adder:adder0.S[3]
+B3xor <= term[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|au|sumsub:sumsub0|adder:adder0
+A[0] => fulladder:fulladder0.A
+A[1] => fulladder:fulladder1.A
+A[2] => fulladder:fulladder2.A
+A[3] => fulladder:fulladder3.A
+B[0] => fulladder:fulladder0.B
+B[1] => fulladder:fulladder1.B
+B[2] => fulladder:fulladder2.B
+B[3] => fulladder:fulladder3.B
+CYi => fulladder:fulladder0.CYi
+S[0] <= fulladder:fulladder0.R
+S[1] <= fulladder:fulladder1.R
+S[2] <= fulladder:fulladder2.R
+S[3] <= fulladder:fulladder3.R
+C4 <= fulladder:fulladder3.CyOut
+
+
+|au|sumsub:sumsub0|adder:adder0|fulladder:fulladder0
+A => R.IN0
+A => CyOut.IN0
+B => R.IN1
+B => CyOut.IN1
+CYi => R.IN1
+CYi => CyOut.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+CyOut <= CyOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|au|sumsub:sumsub0|adder:adder0|fulladder:fulladder1
+A => R.IN0
+A => CyOut.IN0
+B => R.IN1
+B => CyOut.IN1
+CYi => R.IN1
+CYi => CyOut.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+CyOut <= CyOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|au|sumsub:sumsub0|adder:adder0|fulladder:fulladder2
+A => R.IN0
+A => CyOut.IN0
+B => R.IN1
+B => CyOut.IN1
+CYi => R.IN1
+CYi => CyOut.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+CyOut <= CyOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|au|sumsub:sumsub0|adder:adder0|fulladder:fulladder3
+A => R.IN0
+A => CyOut.IN0
+B => R.IN1
+B => CyOut.IN1
+CYi => R.IN1
+CYi => CyOut.IN1
+R <= R.DB_MAX_OUTPUT_PORT_TYPE
+CyOut <= CyOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|au|flags:flags0
+A3 => OVo.IN0
+A3 => OVo.IN0
+B3 => OVo.IN1
+B3 => OVo.IN1
+R3 => OVo.IN1
+R3 => OVo.IN1
+iCBo => CBo.DATAIN
+OVo <= OVo.DB_MAX_OUTPUT_PORT_TYPE
+CBo <= iCBo.DB_MAX_OUTPUT_PORT_TYPE
+
+
