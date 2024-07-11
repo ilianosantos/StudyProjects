@@ -1,0 +1,32 @@
+{
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.2",
+    "swagger-ui-express": "^5.0.0",
+    "yamljs": "^0.3.0"
+  },
+  "name": "groupwork2",
+  "version": "1.0.0",
+  "description": "groupwork2",
+  "main": "seca-server.mjs",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "supertest",
+    "start": "node seca-server.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isel-leic-ipw/seca-ipw-p1-leic2324i-ipw33d-g04.git"
+  },
+  "author": "group04",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isel-leic-ipw/seca-ipw-p1-leic2324i-ipw33d-g04/issues"
+  },
+  "homepage": "https://github.com/isel-leic-ipw/seca-ipw-p1-leic2324i-ipw33d-g04#readme",
+  "devDependencies": {
+    "supertest": "^6.3.3"
+  }
+}
