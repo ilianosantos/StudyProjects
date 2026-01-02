@@ -1,5 +1,7 @@
 # StudyProjects
-Remember this is my way that i find to solve my problems when i was studying that subjects so be respectful. 😊
+Remember this is the way i found to solve these problems when i was studying some subjects of my degree and may contain errors. 😊
 
-When I'm free I'll still improve them but if you feel i have something wrong talk to me. 😉
-#### New Projects comming next semesters...
+I'll still continue to improve them and if you catch something wrong, please send me a message. 😉
+
+#### New Projects comming...
+Follow me to be aware.🫡
