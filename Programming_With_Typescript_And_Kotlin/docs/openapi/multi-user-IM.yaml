@@ -1,0 +1,530 @@
+openapi: 3.0.0
+info:
+  title: IM System API
+  version: 1.0.0
+
+paths:
+  ### Channel Routes ###
+  /api/channels/{channelId}/listen:
+    get:
+      tags:
+        - channel
+      summary: Listen to a channel
+      description: Opens a connection to listen to messages from the specified channel.
+      operationId: listenToChannel
+      parameters:
+        - name: channelId
+          in: path
+          description: ID of the channel
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Connection established successfully
+
+  /api/channels/{channelId}/listen/close:
+    delete:
+      tags:
+        - channel
+      summary: Close the channel listener
+      description: Closes the connection to the specified channel.
+      operationId: closeChannelListener
+      parameters:
+        - name: channelId
+          in: path
+          description: ID of the channel
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: If connection was closed successfully or not
+          content: 
+            application/json:
+              schema:
+                type: boolean
+
+  /api/channels/public:
+    get:
+      tags:
+        - channel
+      summary: Get all public channels
+      description: Retrieves all public channels.
+      operationId: getAllPublicChannels
+      responses:
+        '200':
+          description: Public channels retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OutputChannel'
+        '500':
+          description: Internal server error
+
+  /api/channels/all:
+    get:
+      tags:
+        - channel
+      summary: Get all channels of the authenticated user
+      description: Retrieves all channels belonging to the authenticated user.
+      operationId: getAllUserChannels
+      responses:
+        '200':
+          description: User channels retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OutputChannel'
+
+  /api/channels/{channelId}:
+    get:
+      tags:
+        - channel
+      summary: Get details of a specific channel
+      description: Retrieves details of the specified channel accessible by the authenticated user.
+      operationId: getChannelById
+      parameters:
+        - name: channelId
+          in: path
+          description: ID of the channel
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Channel details retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputChannel'
+        '404':
+          description: Channel not found
+        '500':
+          description: Internal server error
+
+  /api/channels/create:
+    post:
+      tags:
+        - channel
+      summary: Create a new channel
+      description: Creates a channel with the given name and type.
+      operationId: createChannel
+      requestBody:
+        description: Input data for channel creation
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputChannel'
+      responses:
+        '201':
+          description: Channel created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputCreateChannel'
+        '400':
+          description: Invalid input data
+        '500':
+          description: Internal server error
+
+  /api/channels/join/public:
+    post:
+      tags:
+        - channel
+      summary: Join a public channel
+      description: Joins a public channel with the given ID.
+      operationId: joinChannel
+      requestBody:
+        description: Input data for joining a public channel
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputPublicChannelJoin'
+      responses:
+        '200':
+          description: Channel joined successfully
+        '400':
+          description: User is already a participant
+        '404':
+          description: Channel not found
+        '500':
+          description: Internal server error
+
+  /api/channels/join/private:
+    post:
+      tags:
+        - channel
+      summary: Join a private channel
+      description: Joins a private channel with the given invite code.
+      operationId: joinPrivateChannel
+      requestBody:
+        description: Input data for joining a private channel
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputPrivateChannelJoin'
+      responses:
+        '200':
+          description: Channel joined successfully
+        '400':
+          description: User is already a participant
+        '404':
+          description: Invitation's channel not found
+        '500':
+          description: Internal server error
+
+  /api/channels/leave:
+    delete:
+      tags:
+        - channel
+      summary: Leave a channel
+      description: Leaves a channel with the given ID.
+      operationId: leaveChannel
+      requestBody:
+        description: Input data for leaving a channel
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputChannelLeave'
+      responses:
+        '200':
+          description: Channel left successfully
+        '400':
+          description: Channel not found or user is not a participant
+        '500':
+          description: Internal server error
+
+  /api/channels/{channelId}/chat/{skip}/{max}/:
+    get:
+      tags:
+        - channel
+      summary: Get messages of a channel
+      description: Retrieves messages from the specified channel accessible by the authenticated user.
+      operationId: getMessages
+      parameters:
+        - name: channelId
+          in: path
+          description: ID of the channel
+          required: true
+          schema:
+            type: integer
+        - name: skip
+          in: path
+          description: Number of messages to skip
+          required: true
+          schema:
+            type: integer
+        - name: max
+          in: path
+          description: Maximum number of messages to retrieve
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Messages retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OutputMessage'
+        '401':
+          description: User is not authorized to access the channel
+        '404':
+          description: Channel not found
+        '500':
+          description: Internal server error
+
+  /api/channels/{channelId}/chat/send:
+    post:
+      tags:
+        - channel
+      summary: Send message to a channel
+      description: Sends a message to the specified channel.
+      operationId: sendMessage
+      parameters:
+        - name: channelId
+          in: path
+          description: ID of the channel
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        description: Input message
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputMessage'
+      responses:
+        '201':
+          description: Message sent successfully
+        '400':
+          description: Invalid input message
+        '401':
+          description: User is not authorized to send messages to the channel or does not belong to it
+        '404':
+          description: Channel not found
+        '500':
+          description: Internal server error
+
+  ### General Routes ###
+  /api:
+    get:
+      tags:
+        - general
+      summary: Entry point
+      description: Welcome message for the API.
+      operationId: index
+      responses:
+        '200':
+          description: Welcome message
+
+  ### User Routes ###
+  /api/user/register/{code}:
+    post:
+      tags:
+        - user
+      summary: Register a user with an invite code
+      description: Creates a new user if the provided invite code is valid, and deletes the invite after successful registration.
+      operationId: createUser
+      parameters:
+        - name: code
+          in: path
+          description: Invite code to register the user
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: User registration information
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputCreateUser'
+      responses:
+        '201':
+          description: User created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputUser'
+        '400':
+          description: Invalid invite code, missing/invalid input parameters or weak password
+        '409':
+          description: User already exists or email is already in use
+        '500':
+          description: Internal server error
+
+  /api/user/invite:
+    post:
+      tags:
+        - user
+      summary: Create a new registration invite
+      description: Generates a registration invite for a user.
+      operationId: getRegistrationInvite
+      responses:
+        '201':
+          description: Registration invite generated successfully
+          content:
+            application/json:
+              schema:
+                type: string
+        '500':
+          description: Internal server error
+
+  /api/user/home:
+    get:
+      tags:
+        - user
+      summary: Get the home page of the authenticated user
+      description: Returns the home information of the authenticated user.
+      operationId: getUserHome
+      responses:
+        '200':
+          description: User home data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserHomeOutputModel'
+
+  /api/user/login:
+    post:
+      tags:
+        - user
+      summary: Login user
+      description: Logs a user in with the given credentials.
+      operationId: login
+      requestBody:
+        description: User login credentials
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginInput'
+      responses:
+        '201':
+          description: User logged in successfully
+          headers:
+            Set-Cookie:
+              description: The authentication token
+              schema:
+                type: string
+        '401':
+          description: Invalid credentials
+        '500':
+          description: Internal server error or failed to create a new token
+
+  /api/user/logout:
+    delete:
+      tags:
+        - user
+      summary: Logout user
+      description: Logs the currently authenticated user out.
+      operationId: logout
+      responses:
+        '200':
+          description: User logged out successfully
+          headers:
+            Set-Cookie:
+              description: A cookie to delete the authentication token
+              schema:
+                type: string
+        '500':
+          description: Internal server error
+
+
+components:
+  schemas:
+    ### Input Models ###
+    InputChannel:
+      type: object
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+
+    InputChannelLeave:
+        type: object
+        properties:
+          channelId:
+            type: integer
+
+    InputCreateUser:
+        type: object
+        properties:
+          name:
+            type: string
+          email:
+            type: string
+          password:
+            type: string
+
+    InputMessage:
+        type: object
+        properties:
+          text:
+            type: string
+
+    InputPrivateChannelJoin:
+        type: object
+        properties:
+          inviteCode:
+            type: string
+
+    InputPublicChannelJoin:
+        type: object
+        properties:
+          id:
+            type: integer
+
+    LoginInput:
+        type: object
+        properties:
+          username:
+            type: string
+          password:
+            type: string
+
+    ### Output Models ###
+    OutputChannel:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        owner:
+          $ref: '#/components/schemas/OutputUser'
+        type:
+          type: string
+        inviteCodeWithWrite:
+          type: string
+        inviteCodeReadOnly:
+          type: string
+
+    OutputCreateChannel:
+      type: object
+      properties:
+        channelId:
+          type: integer
+        inviteReadOnly:
+          type: string
+        inviteWithWrite:
+          type: string
+
+    OutputMessage:
+      type: object
+      properties:
+        channelId:
+          type: integer
+        text:
+          type: string
+        author:
+          $ref: '#/components/schemas/OutputParticipant'
+        time:
+          type: string
+          format: date-time
+
+    OutputParticipant:
+        type: object
+        properties:
+          id:
+            type: integer
+          user:
+            $ref: '#/components/schemas/OutputUser'
+          channel:
+            $ref: '#/components/schemas/OutputChannel'
+          type:
+            type: string
+
+    OutputUser:
+        type: object
+        properties:
+          id:
+            type: integer
+          name:
+            type: string
+          email:
+            type: string
+
+    UserHomeOutputModel:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        email:
+          type: string

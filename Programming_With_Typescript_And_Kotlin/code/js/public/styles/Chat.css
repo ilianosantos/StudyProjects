@@ -1,0 +1,118 @@
+.chatContainer {
+    display: flex;
+    background-color: #fdfdfd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 800px; /* Adjusted width */
+    margin: 20px auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 1px solid #ddd;
+}
+
+.chatMain {
+    flex: 2;
+    margin-right: 20px;
+}
+
+.chatInfo {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+}
+
+.chatInfo button {
+    display: block;
+    margin: 10px auto 0 auto;
+}
+
+.chatHeader {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.messageList {
+    list-style-type: none;
+    padding: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.messageItem {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Default to left */
+    text-align: left;
+}
+
+.messageItem.right {
+    background-color: #d4edda;
+    align-items: flex-end;
+    text-align: right;
+}
+
+.messageAuthor {
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 5px;
+}
+
+.messageText {
+    margin: 5px 0;
+    color: #333;
+    font-size: 14px;
+}
+
+.messageTime {
+    font-size: 0.8em;
+    color: #666;
+    align-self: flex-end;
+}
+
+.inputBox {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+}
+
+.inputField {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+}
+
+.sendButton {
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sendButton:hover {
+    background-color: #0056b3;
+}

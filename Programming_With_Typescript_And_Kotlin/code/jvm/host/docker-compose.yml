@@ -1,0 +1,36 @@
+services:
+  # Just a machine running ubuntu, with 'dig' installed so that we can observe the docker compose environment.
+  ubuntu:
+    container_name: ubuntu
+    image: chimp-ubuntu
+    tty: true
+
+  chimp-postgres-tests:
+    container_name: chimp-postgres-test
+    image: chimp-postgres-test
+    environment:
+      - POSTGRES_USER=g04-53d
+      - POSTGRES_PASSWORD=daw
+      - POSTGRES_DB=postgresql
+    ports:
+      - "5432:5432"
+
+  # chimp-jvm-dynamic is used to illustrate scenarios with a dynamic number of servers
+  # without static and well know names.
+  # We will use docker compose scaling to create multiple instances of this service
+  chimp-jvm-dynamic:
+    image: chimp-jvm
+    hostname: chimp-jvm-dynamic
+    environment:
+      PORT: 8080
+      DB_URL: "jdbc:postgresql://chimp-postgres-test:5432/postgresql?user=g04-53d&password=daw"
+
+  # The service running the load-balancer
+  nginx:
+    container_name: chimp-nginx
+    image: chimp-nginx
+    ports:
+      - "8080:8080"
+      - "8088:8088"
+    depends_on:
+      - chimp-jvm-dynamic

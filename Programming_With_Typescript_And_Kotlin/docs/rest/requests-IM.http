@@ -1,0 +1,91 @@
+# index
+###
+GET http://localhost:8080 HTTP/1.1
+
+# login
+###
+POST http://localhost:8080/api/user/login HTTP/1.1
+
+content-Type: application/json
+accept-Language: pt-PT
+
+{
+  "username": "user1",
+  "password": "password"
+}
+
+# logout
+###
+POST http://localhost:8080/api/user/logout HTTP/1.1
+
+# getAllPublicChannels
+###
+GET http://localhost:8080/api/channels/public HTTP/1.1
+
+# getAllUserChannels
+###
+GET http://localhost:8080/api/channels/all HTTP/1.1
+
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMUBnbWFpbC5jb20iLCJleHAiOjE2MjYwNjYwNjAsImlhdCI6MTYyNjA2MzQ2MH0.1
+
+# getChannelById
+###
+GET http://localhost:8080/api/channels/1 HTTP/1.1
+
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMUBnbWFpbC5jb20iLCJleHAiOjE2MjYwNjYwNjAsImlhdCI6MTYyNjA2MzQ2MH0.1
+
+# createChannel
+###
+POST http://localhost:8080/api/channels/create HTTP/1.1
+
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMUBnbWFpbC5jb20iLCJleHAiOjE2MjYwNjYwNjAsImlhdCI6MTYyNjA2MzQ2MH0.1
+content-Type: application/json
+accept-Language: pt-PT
+
+{
+  "name": "New Channel",
+  "type": "public"
+}
+
+# getMessages
+###
+GET http://localhost:8080/api/channels/1/chat HTTP/1.1
+
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMUBnbWFpbC5jb20iLCJleHAiOjE2MjYwNjYwNjAsImlhdCI6MTYyNjA2MzQ2MH0.1
+
+# sendMessage
+###
+POST http://localhost:8080/api/channels/1/chat/send HTTP/1.1
+
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMUBnbWFpbC5jb20iLCJleHAiOjE2MjYwNjYwNjAsImlhdCI6MTYyNjA2MzQ2MH0.1
+content-Type: application/json
+accept-Language: pt-PT
+
+{
+  "text": "Hello, world!"
+}
+
+# registerUser
+###
+POST http://localhost:8080/api/user/register/inviteCode HTTP/1.1
+
+content-Type: application/json
+accept-Language: pt-PT
+
+{
+  "name": "John Doe",
+  "email": "john.doe@email.com",
+  "password": "password123"
+}
+
+# getRegistrationInvite
+###
+GET http://localhost:8080/api/user/invite HTTP/1.1
+
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMUBnbWFpbC5jb20iLCJleHAiOjE2MjYwNjYwNjAsImlhdCI6MTYyNjA2MzQ2MH0.1
+
+# getUserHome
+###
+GET http://localhost:8080/api/user/home HTTP/1.1
+
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMUBnbWFpbC5jb20iLCJleHAiOjE2MjYwNjYwNjAsImlhdCI6MTYyNjA2MzQ2MH0.1

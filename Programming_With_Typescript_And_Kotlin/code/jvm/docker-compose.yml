@@ -1,0 +1,12 @@
+services:
+  db-im-tests:
+    container_name: db-im-tests
+    build:
+      context: repository-jdbi
+      dockerfile: ./tests/Dockerfile-db-im-tests
+    environment:
+      - POSTGRES_USER=g04-53d
+      - POSTGRES_PASSWORD=daw
+      - POSTGRES_DB=postgresql
+    ports:
+      - "5432:5432"
